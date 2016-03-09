@@ -1,0 +1,214 @@
+# emacs-mode: -*- python-*-
+import random
+import traceback
+import obj
+import ltfxmap as FX
+from ability.defines import *
+import missionvalidate as mv
+import combatvalidate as cv
+import ability.utility as Utility
+import stringtable_client as StringTable
+import generic_free_attacks as freeattacks
+import tempmods as TM
+SNEAKATKSPINBACKSWEEP_DAMAGE = 75
+SNEAKATKDROPKICK_DAMAGE = 150
+SNEAKATKSUPLEX_DAMAGE = 300
+SNEAKATKSPINTHROW_DAMAGE = 300
+SNEAKATKPUNT_DAMAGE = 600
+SNEAKATKTOPSYTURVY_DAMAGE = 775
+SNEAKATKFREEDOM2JOINTS_DAMAGE = 900
+SNEAKATKDIVINGFRANK_DAMAGE = 725
+SNEAKATKBULLDOG_DAMAGE = 950
+SNEAKATKREVERSEBULLDOG_DAMAGE = 1200
+
+def SneakGrant_Test(sentence):
+    sentence.result = SUCCESS
+    if (sentence.subject.AbilityInv.hasTempMod(SneakFreeDisableShieldAbility, ISDrainTargetAbility) or Utility.InitialSneakTest(sentence.subject)):
+        discovery.clientSystemMessage(sentence.subject.locator, StringTable.ID_CLIENT_ABILITY_SNEAKER_CANNOT_SNEAK)
+        sentence.result = FAILURE
+
+
+SneakGrant_Test.depAttr = '\n'
+
+def ConcealmentGrant_DirectObject(subject, msg):
+    Utility.outputAbilityDebug('Concealment activated on self')
+    subject.CharMvt.addDissemblingType(kSneak)
+    procs = ('',
+     'Concealment_RemoveConcealmentStealth',
+     'ConcealUpdate',
+     '',
+     '')
+    subject.AbilityInv.addTempModProcs(procs, ConcealmentGrantAbility, ConcealmentGrantAbility, 0, 0, 0)
+    Utility.turnOffAuras(subject)
+
+
+
+def ConcealmentGrant_Deactivate(subject):
+    TM.Concealment_RemoveConcealmentStealth(subject, subject)
+    subject.AbilityInv.removeTempMod(ConcealmentGrantAbility, ConcealmentGrantAbility)
+    subject.AbilityInv.removeStateMod(ConcealedAbility)
+    subject.AbilityInv.removeStateMod(StealthStateAbility)
+
+
+
+def ConcealmentGrant_Test(sentence):
+    sentence.result = SUCCESS
+    if Utility.InitialSneakTest(sentence.subject):
+        discovery.clientSystemMessage(sentence.subject.locator, StringTable.ID_CLIENT_ABILITY_SNEAKER_CANNOT_CONCEAL)
+        sentence.result = FAILURE
+
+
+ConcealmentGrant_Test.depAttr = '\n'
+
+def EscapeandEvasion_DirectObject(subject, msg):
+    Utility.outputAbilityDebug('Escape and Evasion activated on self.')
+    subject.CharMvt.activateSneak()
+    procs = ('',
+     'EscapeAndEvasionTerm',
+     'SneakUpdate',
+     '',
+     '')
+    subject.AbilityInv.addTempModProcs(procs, EscapeandEvasionAbility, EscapeandEvasionAbility, 0, 0, 0)
+    Utility.turnOffAuras(subject)
+
+
+
+def EscapeandEvasion_Deactivate(subject):
+    subject.CharMvt.deactivateSneak()
+    subject.AbilityInv.removeTempMod(EscapeandEvasionAbility, EscapeandEvasionAbility)
+
+
+
+def EscapeandEvasion_Test(sentence):
+    sentence.result = SUCCESS
+    if Utility.InitialSneakTest(sentence.subject):
+        discovery.clientSystemMessage(sentence.subject.locator, StringTable.ID_CLIENT_ABILITY_SNEAKER_CANNOT_ESCAPE_AND_EVADE)
+        sentence.result = FAILURE
+
+
+EscapeandEvasion_Test.depAttr = '\n'
+
+def BaseSneakAttackTestFn(sentence, sneak_attack_ability):
+    Utility.outputAbilityDebug('BaseSneakAttackTestFn: Test')
+    sentence.result = SUCCESS
+
+
+BaseSneakAttackDepAttr = '\ndirectObject.hasAbility[SneakAttackDetectionAbility]\ndirectObject.abilities[SneakAttackDetectionAbility]\ndirectObject.Position\ndirectObject.Orientation\ndirectObject.IsInCombat\ndirectObject.locator\n'
+
+def SneakAttackSpinBack_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackSpinBack: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackSpinBackAbility)
+
+
+SneakAttackSpinBack_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackDropKick_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackDropKick: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackDropKickAbility)
+
+
+SneakAttackDropKick_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackPunt_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackPunt: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackPuntAbility)
+
+
+SneakAttackPunt_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackSpinThrow_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackSpinThrow: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackSpinThrowAbility)
+
+
+SneakAttackSpinThrow_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackSuplex_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackSuplex: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackSuplexAbility)
+
+
+SneakAttackSuplex_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackTopsyTurvy_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackTopsyTurvy: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackTopsyTurvyAbility)
+
+
+SneakAttackTopsyTurvy_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackDivingFrank_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackDivingFrank: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackDivingFrankAbility)
+
+
+SneakAttackDivingFrank_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackBullDog_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackBullDog: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackBullDogAbility)
+
+
+SneakAttackBullDog_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackRevBullDog_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackRevBullDog: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackRevBullDogAbility)
+
+
+SneakAttackRevBullDog_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakAttackFreeJoints_Test(sentence):
+    Utility.outputAbilityDebug('SneakAttackFreeJoints: Test')
+    BaseSneakAttackTestFn(sentence, SneakAttackFreeJointsAbility)
+
+
+SneakAttackFreeJoints_Test.depAttr = BaseSneakAttackDepAttr
+
+def SneakFreePrototype_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+def SneakFreeHarryingAttack_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+def SneakFreeDistractingBlow_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+def SneakFreeInfuriatingAssault_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+def SneakFreeLegThrow_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+def SneakFreeDazzlingThrow_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+def StaggeringThrow_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+def SneakFreeWeakeningThrow_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+def SneakFreeWardingBlow_Subject(subject, msg):
+    subject.CharMvt.playScriptWithTarget(Stance_Aggro, Action_FreeAttackWeaponSMKnifeThrow, msg.directObjectLocator)
+
+
+
+# local variables:
+# tab-width: 4

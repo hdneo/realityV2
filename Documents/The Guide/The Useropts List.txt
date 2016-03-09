@@ -1,0 +1,1961 @@
+ResourcePath    ./  
+ScreenWidth 
+ScreenHeight   
+ScreenBitDepth 
+Windowed    
+MaxFrameRate    
+MinFrameRate    
+WorldFile   resource/worlds/test/default.metr
+PlayerName  
+PlayerID    
+LoadObjs    
+EnvTimeScale    
+MouseTurn   
+CreateViews 
+ShowAllViews    
+ShowChatView    
+ShowCommonView  
+ShowInterlockView   
+ShowPlayerView 
+ShowTabsView    
+ShowTargetView  
+ShowToolbarView 
+ShowCursorView  
+Localization    English 
+ChatScrollBackLines 
+ToolTipDelay   
+PanelAnimSpeed  
+ToolTipGUIEnabled   
+ToolTipWorldEnabled 
+ShowDungeonMasterMessages   
+ForceNoSound    
+Max3DVoices 
+3DSoundProviderName 
+DirectSound Hardware    
+MaxSWVoices 
+SoundVolume 
+Sound16Bit  
+ReverbLevel 
+SampleRate  
+ConsoleX    
+ConsoleY    
+ConsoleWidth    
+ConsoleHeight   
+ConsoleMinLines 
+ConsoleFontRezID    
+ConsoleFontSize 
+ConsoleAlpha    
+ConsoleMaxInputHistory 
+ConsoleMaxDisplayHistory   
+ConsoleShowTime 
+ConsoleShowRunFile  
+ClientSleepMS   
+ClipSpeed   
+MemoryHogReports    
+UseWorldPhysics 
+DefaultHardline 
+LogToFile   
+RCCIdleCheckDelay   
+KeepAliveInterval   
+DL_SLOD_InitLoadRadius  
+DL_SID_InitLoadRadius   
+DL_NAV_InitLoadRadius   
+DL_SIDI_InitLoadRadius  
+DL_Ext_InitLoadRadius   
+DL_Prop_InitLoadRadius  
+DL_Int_InitLoadRadius   
+DL_SLOD_PrefetchRadius  
+DL_SID_PrefetchRadius   
+DL_NAV_PrefetchRadius   
+DL_SIDI_PrefetchRadius  
+DL_Ext_PrefetchRadius   
+DL_Prop_PrefetchRadius  
+DL_Int_PrefetchRadius   
+SnoopRequestTimeout 
+ReloadRules 
+ReloadClientHooks   
+ClientPreloadAnimSet01  
+PathWriterFrequency 
+DebugPreloadAnims   
+ReleasePreloadAnims 
+UseCSAssist   
+Client_RenderThrottle_Override  
+Client_RenderThrottle_TargetMinFrameRate    
+Client_RenderThrottle_Step  
+Client_RenderThrottle_Min   
+Client_RenderThrottle_Hysteresis   
+Client_RenderThrottle_FramesForChange
+Gfx_Reload_Textures 
+ModelDefaultMaterialLibrary 
+Engine_Min_DiskSpace_Warning
+AnimationOverrideID
+CameraOffset
+HalfExtents
+DescriptionID
+ModelOverrideID
+Rsi_FOV
+ServerDebugWindowEnabled
+TileMapUnvisittedAlphaScale 
+MapShowThreatOverlay    
+MapThreatOverlayAlpha   
+MapShowPOIText  
+MapShowPOIPosition  
+MapDataNodesTimeToFullAlpha 
+MapDataNodesTimeToNoAlpha   
+WR_InteriorMapMultiplier                                                                                                                                                                                                                                                                                                                                                                                                
+OptionsGame resource/interface/gui/xml/colormap.xml                                                                                                                                                                                                                                                             
+HideBackForwardButtons  
+RestrictMoveResize  
+PreferredWidth  
+PreferredHeight
+ResetViewPositions  
+RefreshShortcutMgrDelay 
+ViewDefaultSoundsEnabled    
+ViewGenericMouseDownSound   
+ViewGenericMouseUpSound 
+ViewGenericPanelOpenSound   
+ViewGenericPanelClose6Sound 
+ViewGenericDropSound    
+FlashTraffic_ShowOnNextWorldLoad    
+FlashTraffic_Duration   
+FlashTraffic_URL    http://thematrixonline.station.sony.com/processFlashTraffic.vm  
+FlashTraffic_TargetType                                                                                                                                                                        
+LoadingAreaCinematics   
+CS_Image_Cin_List_BG    
+CS_Image_Cin_Preview    
+CS_Label_Cin_Title  
+CS_Tree_Cin_List    
+CS_Button_Cin_Play                                                                                                                                                         
+FX_Zoom_Out 
+FX_Zoom_In  
+FX_Transition_Timer                                                                                                                                                                                                                                          
+CastingInterruptColor   
+CastingProgressColor    
+CastingSuccessColor
+CastingFadeSpeed    
+CastingFadeDelay                                                                       
+Include_Check_ReportAbuse   
+Include_Check_SystemInfo    
+Include_Chat_ReplayLog  
+Include_Check_CrashDump 
+Include_Check_ChatLog   
+Include_Check_Screenshot                                                                                                                                                                        
+autoexecute commandid   nameid  resource/misc/chat_commands.xml                                                                                    
+PopupReadSpeed  Multiplied by number of characters to determine time before popup fades 
+ChatClassicMode 
+cl_enablelua    
+ChatMessageHistorySize  
+ChatAutoChatOnFocus                                                                                                                                                                                                                                                                                       
+Option_Font_Large   
+Option_Font_Normal  
+Option_Font_Small   
+Option_Font_Tiny    
+Chat_List_Streams   
+ChatMinimized   
+ChatNotificationBlinkDuration   Length of time a chat button will blink 
+ChatMenuBlinkInterval   Interval used for blinking items in the chat popup menu.                                                                                                                                                                                
+DMWindowYLocation   Set the x location of the dm window.    
+DMWindowXLocation   Set the y location of the dm window.    
+DMWindowHeightLocation  Set the height of the dm window.    
+DMWindowWidthLocation   Set the width of the dm window. 
+NeighborX   
+NeighborY   
+NeighborZ   
+DMFadeSpeed 
+DMFadeTime                                  
+CompassMinimized                                                            
+Compass_ButtonShow  
+Compass_ButtonHide  
+TextWealthCost  
+WC_WriteCodeText      
+ContainerInfoIcon   
+ContainerCloseDistance
+WC_ComplexityRange  
+InfoAmount  
+Crafting_RecipeDDList    
+HardwareCursor  
+Draw_Cursor 
+CursorMaxPickingDist        Maximum distance the cursor will look for an in world hover target, in cm.  
+CursorSpeed This sets the speed of the hardware cursor.  Allowed values are 1 to 20. Any other value will be ignored.   
+UseCursorSpeed      If true, the CursorSpeed will be used to override the hardware cursor speed.    
+CursorMinPickingHalfHeight      Any object less than this half-height will be adjusted to be this half-height when checking for cursor picking. 
+CursorAutoPathTo        If true, the cursor will automatically enter "PathTo" mode when over a valid nav-poly.  
+RefreshTargetInfoDelay  The action menu for the cursor's hover target is refreshed after this many ms have passed.  
+RefreshPathToDelay  The cursor re-checks to see if the player can path to the current world point after this many ms have passed.   
+MouseTurnBuffer The player will turn left or right if the cursor is this many pixels from the edge of the screen.   
+TargetClearOnClickMaxDrag   The maximum angle change of the camera with the button down before it will not clear the target on button up.   
+CursorIgnoreSelf    If set to non-zero value, cursor will ignore player.    
+CursorMinScalingFactor      As objects get closer to the camera, their apparent width to the cursor will shrink by up to this factor.   
+CursorMaxScalingFactor      As objects get further from the camera, their apparent width to the cursor will grow by up to this factor.  
+ShowSelectMaxSearchRange    The range used to check for selectable objects. 
+ShowSelectableUpdateDelay       The selectability of objects will be re-checked after this many ms. 
+ShowSelectableFX    The fx id of the effect to be used when showing that an object is selectable.   
+CursorMaxPathToBlindDistance    The maximum distance the player will walk in a straight line if they do PathTo without a valid nav-poly under the cursor. 
+HackConstructs  
+Interlock_Tactic_Bash_Right_FX  
+Interlock_Tactic_Bash_Left_FX   
+Interlock_Active_Tactic_Border  
+TargetQueueClamp_TacticValue    
+PlayerQueueClamp_TacticValue    
+Interlock_Target_Active_Tactic  
+Interlock_Player_Active_Tactic  
+TargetQueueClamp    
+PlayerQueueClamp    
+Interlock_Label_DebugText   
+Interlock_Text_VsCard   
+Interlock_Progress_Timer    
+CombatChatLevel Set this to lower values in order to decrease the amount of chat produced by combat.    
+CombatShowPendingTacticalAsBlock    
+CombatAnimTime  
+CombatBlockAlpha    
+CombatForcedInterlockIconID 
+CombatUIResolveSeconds  
+CombatUIVSSeconds   
+CombatUIOpponentSeconds 
+CombatUIMultiOnOneMultiplier    
+CombatUIToLockSlideSeconds  
+CombatUISelectorWipeColor   
+CombatUIActivePendingWipeColor  
+CombatUIActiveLockedWipeColor   
+CombatUIShowStates  
+CombatUIShowTacticInputs    
+CombatUIShowSliderUpdates   
+CombatUIShowSliderTimes 
+CombatUIRequestSlideOnDemand    
+InterlockIconAnimTime 
+ui_LatencyThreshold Value in ms used as max value of the latency meter
+SpacesPerTab Email value
+MapZoomLevel    
+MapShowLegend   
+MapShowCoords    
+Map_Label_Zoom  
+Map_Check_Show_Coords   
+Map_Check_Show_Legend   
+Map_Check_Pin   
+Map_Label_Coords    
+Map_Label_Location  
+Map_Image_BG    
+Map_Base
+MapRotation 
+MapCameraDistance   
+MapCameraAngle  
+MapCameraYawAngle       
+MapMouseOverText    Toggles mouse over text in the in-game map  
+MapPlayerBlipText   Toggles the display of text for player created markers
+AdvVideo_DropDown_NameTags_Org  
+AdvVideo_DropDown_NameTags_Other    
+AdvVideo_DropDown_NameTags_Team 
+AdvVideo_DropDown_NameTags_Self   
+AdvVideo_Slider_UI_Control_Alpha    
+AdvVideo_Check_UI_DisplayTips   
+AdvVideo_Check_UI_LockHotbar    
+AdvVideo_Check_UI_UseCustomAlpha    
+AdvVideo_Check_UI_EnableWorldTooltips   
+AdvVideo_Check_UI_EnableGeneralTooltips 
+AdvVideo_Check_Draw_3DUI    
+AdvVideo_Check_Combat_Text  
+AdvVideo_Check_Fill_Water   
+AdvVideo_Check_Draw_Disable_VSync   
+AdvVideo_Check_Fill_AntiAliasing    
+AdvVideo_Check_Fill_Green_Tint  
+AdvVideo_Check_Fill_Overbright  
+AdvVideo_Check_Object_Dynamic_LOD   
+AdvVideo_Check_Object_Object_Shadows    
+AdvVideo_DropDown_Particle_FX   
+AdvVideo_Button_Draw_Texture_Details    
+AdvVideo_DropDown_Draw_Texture_Details  
+Richworld_Detail    
+Slider_Rain_Detail  
+Slider_Weather_Detail  
+Slider_Grass_Detail 
+Slider_Prop_Distance    
+Slider_Interior_Distance  
+Slider_Exterior_Distance    
+AdvVideo_Option_Ram_Usage_High  
+AdvVideo_Option_Ram_Usage_Medium    
+AdvVideo_Option_Ram_Usage_Low   
+AdvVideo_Option_Detail_High 
+AdvVideo_Option_Detail_Medium   
+AdvVideo_Option_Detail_Low  
+AdvVideo_Check_Presets_Use     
+Audio_Slider_MasterVol  
+EnableChatSounds    Whether or not sounds are played when chat messages are received/sent.  
+KeyBindOptions_Cursor_Speed 
+KeyBindOptions_Check_EdgeLook   
+KeyBindOptions_Cursor_UseSpeed  
+KeyBindOptions_Mouse_Sensitivity    
+KeyBindOptions_Check_InvertMouseY   
+KeyBindOptions_KeysPage_Main    
+KeyBindOptions_KeysPage_Empty   
+KeyBindOptions_Button_Scheme_FPS    
+KeyBindOptions_Button_Scheme_MMP    
+KeyBindOptions_Button_Scheme_Default    
+KeyBindOptions_Option_Camera    
+KeyBindOptions_Option_UIKeys    
+KeyBindOptions_Option_Chat  
+KeyBindOptions_Option_Trgt  
+KeyBindOptions_Option_MoveAction    
+KeyBindOptions_Main_Window  
+Video_Check_Pin 
+Video_List_RamUsage 
+Video_List_Performance  
+Video_Check_Windowed    
+Video_Slider_Gamma  
+Video_DropDown_ScreenRes    
+ScreenRestoreWait       The amount of time to wait for the user to confirm the want to change the screen resolution.    
+PlayerFullHealthChangeDelayMS       The amount of time, in milliseconds, for the empty health bar to go from full to empty health.  
+PlayerFaceCamY  
+MediaPlayer_FavoritesFile   
+MediaPlayer_ScrollSpeed 
+MediaPlayer_Volume  
+MediaPlayer_Favourite   
+MediaPlayer_MaxFavorites    
+HotbarMoveBeforeBeginDragSquared    
+HotbarLockIcons
+PathWriterUseRelative
+FX_Wind_Scale   
+FX_Wind_Change_Scale    
+ScreenShot_Filename_Base    ./screenshot    
+CubeShot_Filename_Base  ./cubeshot  
+PanShot_Filename_Base   ./panshot   
+CubeShot_Size_XY    
+ScreenShot_JPG_Quality  
+ScreenShot_Pan_Enable   
+ScreenShot_Pan_FOV_Y    
+ScreenShot_Pan_FOV_X    
+ScreenShot_Pan_Segs_X   
+ScreenShot_Pan_Segs_Y   
+SendChatOnToggle        If set to 0, the contents of the chat input line will not be sent when the user exits chat mode.    
+DoubleClickKeyboardDelay    This is maximum the delay  in milliseconds  allowed between pressing a keyboard control twice in order to cause a double click
+ShowItemIDInVendor
+CCRReportDirectory    
+CCRReportFile
+CCR_URL
+CCR_PetitionFinalPage
+CCR_UploadPage
+CCR_UploadFailPage
+CCR_UploadSuccessPage
+CCR_Username
+CCR_Password
+CCR_ReportFileServer
+CCR_UploadFileServer
+CCR_UploadFileLocalPage
+InCombat
+WR_Water_Init
+WatchVideo
+DayPattern
+DayScale
+GameTime
+FormatObjectProperties  
+GetCinematicCount   
+GetCinematicName    
+GetCinematicConvertedName   
+GetCinematicURLName 
+GetCinematicImage   
+CCR_ReplayBufferSeconds 
+CCR_LogFilename CCRLog.txt  
+CCR_PatchLogFilename    patchctl.log
+CDCUpdateRate   
+KeyConfigUseServer  
+UseFactionIDCache    
+PortalListB 
+NavPolyListB    
+PortalListA 
+NavPolyListA    
+MaxExtents  
+MinExtents  
+ObjPos  
+ObjID         
+EnvRendTex 
+WidthHeight  
+EnvRendTex 
+ReRender_Time    
+EnvRendTex 
+SpriteSize_Scale 
+EnvRendTex_FullWorld_Ren   
+EnvRendTex_Cycle_Ren    
+EnvRendTex_Max_Height
+HardlineRefreshDelay
+EnforceInboxLimit   
+CategoryLimit
+DescendingOrder     
+MaxHeaders  
+PersistentMessageIDs    
+NewFolder   
+PersistentMessageIDs  
+TimeOlderThan
+MailMaxAttachments  
+MailInfoCost    
+MailItemCost    
+MailMinItemCost 
+MailMaxSubjectLength    
+MailMaxBodyLength                                   
+SOEChat 
+NumHeadersToRetrieve                                   
+BannedOrganizations   
+MaxBuyingPrice
+BannedOrganizations
+MassiveLocalBinkInterlaced
+MassiveLocalBinkFillIO
+MassiveLocalBinkQuickSeek   
+IncompleteSendsForForceRebuild      Forces RSet rebuild after this many send cycles where we couldn't pack everything   
+RelevanceLostDelay  
+AdminDistributionByteCap    Max bytes used for admin distribution  zero    no cap   
+RelevanceLostSendRate   
+ClientObjectCleanupInterval 
+UndistributeOnRelevanceLost
+EnvoyRemovalExtraLogging    turn up volume on some diagnostics around object deleted monitors   
+MarginServerDNSSuffix    thematrixonline.com    
+MarginServerPort    
+IgnoreHostsFileForAuth      Should the client ignore the hosts file when resolving the AS DNS name  
+IgnoreHostsFileForMargin        Should the client ignore the hosts file when resolving MS DNS names     
+UseLaunchPad    Should we use the SOE LaunchPad API for authentification  etc   
+LaunchPadHosts The host names may be DNS names or dotted IP addresses  and must have a colon delimited port                   
+LaunchPadConnectRetries How many connection failures before we give up  
+LaunchPadTouchTimer  Touch  server to keep session alive every this many seconds                                
+PacketLifespan  
+UDPPacketEncryptionStyle    
+HealthRegenStandRate        Percent of max health to heal each second while sitting  from               
+InnerStrengthRegenStandRate Percent of max inner strength to heal each second while sitting  from    
+AmbientFX
+StartingCharacterData \xml\resource\misc\StartingCharacterData.xml 
+CombatMaxConnectedHeight    
+CombatMaxConnectedRange
+MeleeFreeFire   
+MeleeFreeFireScalar
+FreeFireScalar  
+MeleeFreeFireRange  
+CombatMaxHeight 
+CombatFailedForcedAttackIS  The amount of inner strength spent when a character fails to initiate interlock combat  
+CombatWithdrawIS        The amount of inner strength spent when a character withdraws from interlock combat
+FXUsed  
+FixedBinkID 
+FixedBinkIDOverride 
+LightColor 
+OnDuration 
+OffDuration
+MaxIntensity
+MinIntensity     
+ElevatorShakeTime                                                                                                                                                                     
+LogChatOnStartup   
+Gfx_MinSpec_Warning 
+cl_idletimeout  
+cl_mspinginterval   
+GetNeighborhoodFXID 
+GetCloseCombatDamage    
+GetFreeAttackDamage 
+FormatObjectProperties  
+EnableSplash    Set this to 0 to stop Splash Screens.   
+Splash0 \resource\Bink\wbie.bik This is the relative path to the first Splash Screen.   
+SplashDelay0    This is how long a Screen Will play before you can early exit.  
+Splash1 \resource\Bink\sega.bik 
+SplashDelay1    
+Splash2 \resource\Bink\Bumper_800_600.bik   This is the relative path to the second Splash Screen.  
+SplashDelay2    
+Splash3 \resource\Bink\SOESplash.bik    This is the relative path to the third Splash Screen.   
+SplashDelay3    
+Splash4 \resource\Bink\ati.bik  This is the relative path to the fourth Splash Screen.  
+SplashDelay4    
+Splash5 This is the relative path to the fifth Splash Screen.   
+SplashDelay5    
+EnableMessageTrace  
+Ignore_PlayerCameraSettings 
+UpdateConfigFile    
+PlayerBodyType  
+PlayerHeadType  
+PlayerHairType  
+PlayerSkinTone  
+DL_InitToPrefetchRampTime_RezLimit  
+DL_InitToPrefetchRampTime_0 
+ExitBulletTimeEffectPreTime 
+WR_EnvStartTimeOfDay    
+DL_MinTeleportDistToTriggerMatrixView   
+ScreenFilter_Type   
+CombatPrecacheAnimationTable    
+cl_ReportOldNeighborhood    
+cl_processors   
+Color_ExperienceAward   
+Color_ErrorMsg 
+ChatModal   
+Music_FirstSpeechVolumeMod  
+WR_WeatherSnd_InOut_Speed   
+LoadingScreenMinFrameTime   The minimum time to wait between each render of the loading screen, in seconds. 
+MapTipTime  
+DisableMediaPlayer  
+SkipTutorialOnLogin 
+PlayerFacialHairColor   
+PlayerFacialHair    
+PlayerLeggingsColor 
+PlayerLeggings  
+PlayerGlassesColor  
+PlayerGlasses   
+PlayerHandColor 
+PlayerHand  
+PlayerShoesColor    
+PlayerShoes 
+PlayerPantsColor    
+PlayerPants 
+PlayerCoatColor 
+PlayerCoat  
+PlayerShirtColor    
+PlayerShirt 
+PlayerHatColor  
+PlayerHat   
+WeatherSoundEnable  
+WeatherSoundVolume  
+EnterWorldCmd   
+CheckMotdTimestamp  
+InvertMouseY    Invert the mouse Y axis for mouse look and turn.    
+MouseSensitivity    This sets the mouse sensitivity.   
+CameraFarZ  
+CameraNearZ 
+CameraFOV   
+CameraFOVChangeDuration 
+AllowBulletTimeCamera   Set this to 0 to disable the automatic override of the camera for bullet time.  
+CameraMode  
+CameraJumpMode 
+ILCameraMode    
+CameraMaxYawChange  
+CameraUserPitchSpeedScale   
+CameraUserPitchLookSpeedScale   
+CameraUserYawSpeedScale 
+CameraMoveModeRotSpeedScale 
+CameraUserDistSpeed 
+CameraBumpTurnEnable        Set this to 1 to enable camera bump turning in full screen mode.    
+CameraBumpTurnStartZone 
+CameraBumpTurnSpeedScale    
+CameraBumpPitchStartZone    
+CameraBumpPitchSpeedScale   
+CameraBumpDeadZone  
+CameraDefaultPitch  
+CameraDefaultYaw    
+CameraDefaultDist   
+CameraHeightOffset  
+CameraHeightOffsetTime  
+CameraUserKeyYawSpeedScale  
+CameraUserKeyPitchSpeedScale    
+CameraUserKeyDistSpeedScale 
+CameraChaseMovementOffsetDistance   
+CameraChaseMovementPitch   
+CameraChaseRotationDuration 
+CameraChaseMaxAngle 
+CameraChaseMaxAngularSpeed  
+CameraStiffMovementOffsetDistance   
+CameraStiffMovementPitch    
+CameraStiffRotationDuration 
+CameraStiffMaxAngle 
+CameraStiffMaxAngularSpeed  
+MouseLookStartZone  
+MouseLookStopZone   
+MouseMaxXOffset 
+MouseMaxYOffset 
+CameraMaxDistSpeed  
+CameraDistInterpDuration    
+CameraHardMinDist   
+ExteriorCameraFOV   
+InteriorCameraFOV   
+ExteriorCameraFarZ  
+InteriorCameraFarZ  
+CameraAdjustWidthHalfAngle  
+CameraChaseMaxPathFocusDistance 
+ILFreeLookLookAtDuration        The free-look combat camera will take this long to go to the new combat center. 
+ILFreeLookNewTargetDuration     The free-look combat camera will take this long to rotate itself.   
+ILFreeLookCameraDefaultPitch    The initial pitch of the free-look combat camera.   
+ILFreeLookCameraDefaultYaw  The initial yaw of the free-look combat camera. 
+CameraJumpShowDistance  
+CameraMinDist   The minimum distance the camera can zoom out.   
+CameraMaxDist   The maximum distance the camera can zoom out.   
+CombatCameraMinDist 
+CombatCameraMaxDist 
+CameraMaxPitch  
+CameraMinPitch  
+CameraNavMeshPhysics    Turn this on to see the camera not go off the nav-mesh. 
+CameraPhysics   Set to zero to disable camera physics.  
+CameraSpherePhysics Used for internal debugging.    
+CameraFrustumPhysics    
+CameraPhysicsNearDist   The camera physics will starts its collision tests this distance from the player's head.    
+ILBumpCamera    
+ILDesiredSector 
+CameraMinJumpHeight 
+CameraJumpMinHeightOffset   
+CameraJumpMaxHeightOffset   
+CameraJumpMinFOV    
+CameraJumpMaxFOV    
+CameraJumpDefaultPitch  
+CameraJumpMinPitch  
+CameraJumpMaxPitch  
+CameraHyperJumpPitch    The camera will go to this pitch while the player is hyper-jumping. 
+CameraHeightMapXSamples 
+CameraHeightMapYSamples 
+CameraPringleHeightMapXSamples  
+ILCameraSmoothStartPosDuration  
+ILCameraSmoothStartPosMaxSpeed  
+CamierLookBehindDuration    The time that the camera should take to get behind the player when they press LookBehind.   
+CameraMaxFrameTime  
+TestPropBox 
+TestPropBoxDepth    
+TestPropBoxHeight   
+ILCameraShowTransform
+MaxEffectCount  Determines how many FX can be active simultaneously 
+fx_mode Determines what types of FX get played  
+RenderBulletTimeOnly    Controls whether we draw bullet time FX when not in bullet time 
+CombatForceAttackDelayTime      The minimum time delay allowed between attack requests, in seconds. 
+CombatFreeAttackDelayTime   
+CombatStuckInInterlockTimeElapse    
+CombatApproachForAttack 
+LowHealthWarningFactor      When health falls this far below max-health, the low health warning will be issued
+EnvRendTex_WidthHeight 
+EnvRendTex_ReRender_Time    
+EnvRendTex_SpriteSize_Scale 
+EnvRendTex_FullWorld_Ren    
+EnvRendTex_Cycle_Ren    
+EnvRendTex_Max_Height   
+fx_mission_door 
+fx_mission_object   
+fx_mission_security 
+IgnoreIntroState    
+MissionGoalReminderDelay    Number of idle seconds until the mission goal reminder popup appears.   
+MissionUITimeout        Number of seconds before the UI assumes the TRGS has died and resets Mission UI.    
+MissionBreadcrumbs  Enable breadcrumb waypoints leading to the mission area
+PlayerFX_LightPool_Radius   
+PlayerFX_LightPool_Proj_Angle   
+PlayerFX_LightPool_Bright_Scale 
+MovementRotationVelocity    
+ClipMovementRotationScale   
+MovementRunSlowdownDelay    
+MovementRunSlowdownDuration 
+MovementWithdrawDelay   
+MouseTurnStartZone  
+MouseTurnStopZone   
+MouseMoveRotationScale  
+MouseTurnMaxFreeLookYaw     This sets the maximum amount the mouse-turn action will rotate the camera before the player plays a turn animation. 
+PlayerMovementMaxPath   
+PlayerPathing_StartWalkingDistance  
+PlayerPathing_UseQuickPath  
+FollowTargetRepathTime  
+FollowTargetRepathDistance  
+FollowTargetTolerance   
+FollowTargetStopDistance    
+FollowTargetAlwaysFace  
+FollowAllyMaxStartDistance  
+FollowOpponentMaxStartDistance  
+FollowTargetMaxDistance 
+FollowTargetMinDistance 
+ShowPlayerPath 
+ScreenFilters_Enable    
+ScreenFilters_GreenShift_Allow_Fallback 
+ScreenFilters_GreenShift_Value_0    
+ScreenFilters_GreenShift_Value_1    
+ScreenFilters_GreenShift_Color_0_R  
+ScreenFilters_GreenShift_Color_0_G  
+ScreenFilters_GreenShift_Color_0_B  
+ScreenFilters_GreenShift_Color_1_R  
+ScreenFilters_GreenShift_Color_1_G  
+ScreenFilters_GreenShift_Color_1_B  
+ScreenFilters_GreenShift_Osc_Scale  
+ScreenFilters_HackerView_Osc_Scale  
+ScreenFilters_HackerView_Value_0    
+ScreenFilters_HackerView_Value_1    
+ScreenFilters_HackerView_Value_2    
+ScreenFilters_HackerView_Value_3    
+ScreenFilters_HackerView_Value_4    
+ScreenFilters_Screen_Glow_SubVal    
+ScreenFilters_Screen_Glow_BlurScale 
+ScreenFilters_Screen_Glow_BrightFactor  
+ScreenFilters_Screen_Glow_AutoSetVals   
+ScreenFilters_Screen_Glow_Just_Glow 
+ScreenFilters_Screen_Glow_Render_Spread 
+ScreenFilters_Screen_Glow_DownSample_Div    
+ScreenFilters_Screen_Glow_Trg_OutDoors_Day_SubVal   
+ScreenFilters_Screen_Glow_Trg_OutDoors_Day_BlurScale    
+ScreenFilters_Screen_Glow_Trg_OutDoors_Day_BrightFactor 
+ScreenFilters_Screen_Glow_Trg_OutDoors_Night_SubVal 
+ScreenFilters_Screen_Glow_Trg_OutDoors_Night_BlurScale  
+ScreenFilters_Screen_Glow_Trg_OutDoors_Night_BrightFactor   
+ScreenFilters_Screen_Glow_Trg_InDoors_SubVal    
+ScreenFilters_Screen_Glow_Trg_InDoors_BlurScale 
+ScreenFilters_Screen_Glow_Trg_InDoors_BrightFactor  
+ScreenFilters_Screen_Glow_Amb_Min   
+ScreenFilters_Screen_Glow_Amb_Max   
+ScreenFilters_Screen_Glow_Auto_TrgMoveScale 
+ScreenFilters_Screen_Glow_Auto_TrgMoveScale_HackView    
+ScreenFilters_HackerView_1_Sub_Scale    
+ScreenFilters_HackerView_1_Bri_Scale_Max    
+ScreenFilters_HackerView_1_Bri_Scale_Min    
+ScreenFilters_HackerView_1_Bri_Scale_VibScale   
+ScreenFilter_Enable_GreenShift  
+ScreenFilter_Enable_Overbright  
+AntiAlias_Level     
+TargetClearOnClick  
+TargetDontShowWhenClear 
+TargetRefreshDelay  Wait this many ms before refreshing the target info.    
+ChallengeMaxConsiderTime    The challenge to a duel accept/reject dialog must be answered in this many seconds. 
+TipMgr_AllowTips     
+TrashMgr_Target_Trash   
+TrashMgr_Radius_Out 
+TrashMgr_Radius_In  
+TrashMgr_Radius_Kill    
+TrashMgr_Check_Inc  
+TrashMgr_FX_Max_Life    
+UI_NMap_Z   
+UI_NMap_Y_Max   
+UI_NMap_Light_Scale
+waypoint_min_dist   
+waypoint_delete_on_arrival  
+waypoint_cull   
+Ambient_VolChange_Speed
+SOEAnswerPage       http://mxo-soe.custhelp.com/cgi-bin/mxo_soe.cfg/php/enduser/std_alp.php 
+SOEPrefix   
+SOE GamePrefix  
+MXO WorldPrefix     Game server portion of SOE Chat node to log in to, for example: "Method"    
+SOEReconnectTimeout 
+ChatPrefix_GM   
+ChatPrefix_Staff    
+ChatPrefix_SOE_CSR  SOE+CS+ 
+URL_GOBlopedia  ps-erifri/goblopedia/ig.aspx    
+URL_GOBlopediaQuery ?GOID=%d    
+FilterChat  
+ChatTellsFromBuddyOnly  
+EnableChatFX        Whether or not visual indicators will be shown when player chats    
+ChatLogNumLinesBeforeFlush 
+MusicRelativePath   
+MusicThreadHeartbeat    
+MusicThreadHeartbeatTime    
+MusicSystemEnable   
+MusicSystemDebug    
+MusicSystemPending  
+MusicSystemPlaying  
+MusicSystemZone 
+MusicSystemSegName  
+MusicSystemVolume   
+InternalMusicMute   
+MusicThreadPriority
+MaxCharacterVelocity    
+SoundEnabled    
+MasterVolume    The master audio volume.    
+audio_metersperunit 
+audio_rolloff_factor    
+audio_doppler_factor    
+audio_voices_playing    
+audio_outer_radius_kill 
+audio_3d_algorithm  
+audio_cache_all_buffers 
+audio_clone_buffers_enabled 
+audio_height_cull_value 
+audio_height_cull_value_outside 
+audio_height_cull_value_inside  
+audio_loopingBufferExtraTime    
+audio_high_quality  
+Audio_Use_Doppler   
+audio_eax_detected  
+audio_eax_enabled   
+audio_speaker_config    
+audio_eax_preset    
+audio_linear_to_db_factor   
+audio_audible3d_sounds  
+AudioLoopingNotifications   
+AudioLoopingThreadPriority  
+audio_extra_buffer_size 
+AudioDebugOutput 
+AudioLoopingThreadSleepDefault  
+AudioLoopingOutput
+ConsoleColor    
+ConsoleText_Verbose 
+LogFileNames    
+EnableStackDumping  
+EnableAssertStackDumping    
+SuspendThreadsOnAssert  Enable to suspend all other threads when a thread asserts.  
+MaxStackDumpFrames  
+DisableArgsInStackDumps
+DoSchedulerCheckInvar   Do somewhat costly checking on priority queue (looking for problem on TRGS)
+Cin_Never_Play  
+Cin_Play_Latest
+Cin_Play_File   
+Cin_Default_Font_0 
+Cin_ShowTiming  
+Cin_ExportToBitmap  
+Cin_ExportToBitmapFrameRate 
+Cin_ExportToBitmapBaseFilename 
+Cin_ShowSubtitles
+ILTMonitorView  
+SecondsPerRSetRebuild   
+CyclesPerRSetRebuild    
+DefconRSetRebuildScalar     Modifies rebuild rate as defcon drops to a max of this value at Defcon 1 MELTDOWN   
+IncompleteSendsForForceRebuild      Forces RSet rebuild after this many send cycles where we couldn't pack everything   
+RelevanceLostDelay  
+AdminDistributionByteCap    Max bytes used for admin distribution (zero == no cap)  
+RelevanceLostSendRate   
+ClientObjectCleanupInterval 
+UndistributeOnRelevanceLost 
+DPrintf 
+EnvoyRemovalExtraLogging    turn up volume on some diagnostics around object deleted monitors   
+VerifyClientInput   
+VerifyServerInput   
+DObSysDebugBreak    
+DObSysXTrack    
+ODMLogging  Extra logging for the object deleted monitor    
+DisconnectOnHandleInputError        Controls whether a client gets disconnected if it causes a distributed object system HandleInput error  
+DisconnectOnControlSwitchError  Controls whether a client gets disconnected when there is an error while control switching  
+LengthWordForHandleInputRecovery    whether or not to put a length word at the start of all server->server traffic for better error recovery    
+DeletedObjectMaxBytes       If a deleted object's view wants to distribute more than this in its final shot, ignore it    
+ModelLighting_Enable    
+ModelShadow_Enable  
+ModelShadow_Blob_Enable 
+ModelShadow_Blob_AlphaFactor    
+ModelShadow_Proj_Enable 
+ModelShadow_Proj_Size   
+ModelShadow_Fallback_0  
+ModelShadow_Fallback_1  
+ModelShadow_ProjBlur_RS 
+FX_RenderFX 
+FX_Enabled  
+FX_Attachment_Update_Disable  
+FX_Max_Update_TimeSlice 
+FX_Auto_Move_Factory_CacheSize    
+FX_FX_Spawner_Factory_CacheSize 
+FX_Model_Rigid_Factory_CacheSize     
+FX_Model_Skel_Factory_CacheSize 
+FX_PSys_Factory_CacheSize  
+FX_PolyTrail_Factory_CacheSize  
+FX_Rigid_Sphere_Factory_CacheSize  
+FX_Sprite_Factory_CacheSize
+FX_Model_Effector_Factory_CacheSize
+FX_Sound_Factory_CacheSize   
+FX_Anim_Sprite_Factory_CacheSize    
+FX_Light_Cone_Factory_CacheSize 
+FX_Light_Flash_Factory_CacheSize    
+FX_Light_Glare_Factory_CacheSize    
+FX_Light_Reflector_Factory_CacheSize    
+FX_Lightning_Arc_Factory_CacheSize  
+FX_Camera_Shake_Factory_CacheSize   
+FX_Text_Factory_CacheSize  
+FX_Screen_FX_Factory_CacheSize
+FX_Massive_Sprite_Factory_CacheSize
+FX_Packed_RezID 
+FX_Disable
+FX_Light_Glare_HalfSize 
+FX_Light_Glare_Alpha    
+FX_Light_Glare_Dst_0    
+FX_Light_Glare_Dst_1
+FX_Wind_Torque_Factor   
+FX_RigSphr_RndFctr
+FX_MinSoundCompMs
+MassiveSpewMatrixBlend  
+MassiveMatrixCodeBlendMax    
+BackBufferCount 
+ZBitDepth   
+StencilBitDepth 
+ForceSwapEffectBlt  
+AntiAliasFSOverSample   
+AntiAliasFSQuality  
+NoSyncOnFlip    
+Gfx_IfAACreate2ndRenderTarget   
+RSMgr_EnableCaching 
+WorldClumpMgr_VB_Count  
+WorldClumpMgr_VB_Size   
+VBSubAllocator_VB_Count 
+VBSubAllocator_VB_Size  
+Model_UseSubAlloc_Limit 
+SprtAry_Discard_On_Lock 
+Lockable_BackBuffer 
+FogEnable   
+FogFarZ 
+FogNearZ    
+FogR    
+FogG    
+FogB    
+TableFog    
+32BitTextures   
+32BitLightmaps  
+GammaScale_R    
+GammaScale_G    
+GammaScale_B    
+NormalizeNormals    
+DXTEnable   
+ForceSWVertProcess  
+ForceSW_Quad_SprAry 
+Render_No_Textures  
+Wireframe   
+Gfx_Disable_MipMapping  
+MaxTextureSize 
+MaxTexAspectRatio  
+MipmapOffset    
+TexGroupMipOffset0  
+TexGroupMipOffset1  
+TexGroupMipOffset2  
+TexGroupMipOffset3  
+TexGroupMipOffset4  
+TexGroupMipOffset5  
+TexGroupMipOffset6  
+TexGroupMipOffset7  
+Mipmap_Max  
+Mipmap_Bias 
+RenderDebugLevel   
+DrawPrim    
+Gfx_DrawPrim_FogDisable 
+Gfx_DrawPrim_Caching_Disable  
+Gfx_RTex_Cache_Max_Count    
+Gfx_RTex_Cache_Profile  
+Gfx_RTex_Cache_PreFill  
+Gfx_Shadows_BlurFactor  
+Gfx_Force_Cull_None 
+EnableCrashDumping  
+CrashDumpDir    .\
+MiniDumpType    
+SuspendThreadsOnCrash   Enable to suspend all other threads when a thread crashes.  
+KillProcessAfterCrashDump   Should the process exit after crashing rather than trying to cleanup normally?  
+OnlyHandleFirstCrash    If more than one thread crashes, should we only dump info on the first? 
+EnableCrashStackDumping 
+EnableCrashDumpUploads  Set to 1 to prompt the user to upload crash dumps to a web server   
+EnableShutdownCrashDumps    Should the client generate dumps of shutdown crashes?
+ModelEffector_StaticPan_Max 
+ModelEffector_StaticPan_Speed   
+ModelEffector_StaticPan_TexScale    
+ModelEffector_Static_Anim_OffsetScale   
+ModelEffector_Static_Anim_Freq  
+ModelEffector_Blur_Step 
+ModelEffector_Blur_Factor_0 
+ModelEffector_Blur_Factor_1 
+ModelEffector_Selected_Min  
+ModelEffector_Selected_0    
+ModelEffector_Selected_1    
+ModelEffector_Selected_2    
+ModelEffector_Red_Outline_Scale 
+ModelLighting_AmbAdd_R  
+ModelLighting_AmbAdd_G  f
+ModelLighting_AmbAdd_B  
+ModelEngObj_HighPriority_RenderLOD_Dst_Scale    
+ModelEngObj_OmniLight_Spec_Scale    
+ModelEngObj_LOD_Dst_Scale   
+ModelEngObj_ConeDownLight_Scale 
+ModelEngObj_ConeDownLight_Pos_X 
+ModelEngObj_ConeDownLight_Pos_Y 
+ModelEngObj_ConeDownLight_Pos_Z 
+ModelEngObj_ConeDownLight_RadSqr    
+ModelEngObj_ConeDownLight_Cam_Z_Scale   
+ModelEngObj_Sel_FxID    
+ModelEngObj_Sel_Fx_Def_YOff 
+ModelEngObj_Sel_Fx_Def_YDelta   
+ModelEngObj_Sel_Fx_Ext_YOff 
+ModelEngObj_Sel_Fx_Rot_Speed    
+ModelEngObj_Hacker_FxID
+ModelShadow_Max_Draw_Dst 
+ModelShadow_Proj_Fade   
+ModelShadow_Proj_Alpha  
+ModelShadow_Proj_LODScale   
+ModelShadow_Proj_LightDir_MaxYValue 
+ModelShadow_Proj_LowLight_DownScale 
+ModelShadwo_Proj_OntoObjects    
+ModelShadow_Sqr_OffsetZ 
+ServerFPS   
+IPClientPort    
+IPClientPortRange   
+IPClientPortMRU 
+IPServerPort    
+BindIP  
+ConndeadTimeout 
+RCCCloserTimeout    Whether or not to time out RCC closers. 
+UDPConnSendInterval 
+UDPConnWaitTime 
+IPDebug 
+SMPDebugLevel   
+ShowConnStats   
+UnguarMsgPress  
+GuarMsgPress    
+BandwidthTargetClient   
+BandwidthTargetServerLoading    
+BandwidthTargetServer   
+PaceIntervalClient  
+PaceIntervalServerLoading   
+PaceIntervalServer  
+GuarMsgQMaxClient   
+LatencySim  
+DropRate    
+SimTimeSendPace 
+ShowThruput 
+AckTimeout  
+MinPacketSize   
+SendBandwidth   
+CIPSAdjust  
+APLRate 
+CPUThreshold    
+ClientTroubleHint   
+ServerTroubleHint   
+ServerTHComp   
+RCCTROutPktQLimitClient 
+TroubleReportInterval   
+ThreadedClientInput     
+DictionaryFile  ../../matrix/resource/misc/dictionary.txt   Path to file that contains the good word list.  
+DirtyWordFile   ../../matrix/resource/misc/filterwords.txt  Path to file that contains the dirty word list. 
+ReservedWordFile    ../../matrix/resource/misc/reservedwords.txt    Path to file that contains the reserved word list.    
+Render_FX   
+Render_Other   
+Render_EngObj   
+Render_Models   
+Render_World 
+Profile_Enable  
+Profile_Output  
+Profile_GroupEnable 
+Profile_GroupDisable    
+Profile_Frames_Per_Report   
+Samples_Per_MaxReset    
+Profile_Samples_Per_FileReset   
+Profile_Display_Colors  
+Profile_Display_Percentage  
+Profile_Display_Values  
+Profile_Display_MaxValues   
+Profile_Display_Spacing 
+Profile_Display_Background  
+Profile_Display_Font 
+RezMgr_Prefetch_Buffer_Size 
+RezMgr_UnCompress_Buffer_Size   
+RezMgr_Dead_Rez_Mem 
+RezMgr_Dead_Rez_Count   
+No_Load_Textures    
+No_Load_Props   
+RezMgr_FileCache_Size_Override  
+CachedFileReport    
+PreAlloc_SubAllocs  Allows the sub-allocators to pre-alloc  
+SubAlloc_DebugProfile   
+SubAlloc_Disable    
+RezMgr_Disable_FileCache    
+RezMgr_Max_Prefetch_MSs_Per_Frame  
+RezMgr_Report_Resource_Profile  
+RezMgr_Report_Resource_Profile_Filename 
+RezMgr_QuickRezPack_In_Debug   
+RezMgr_PreFetch_Loader_Thread  
+RezMgr_Run_Prefetch_LoaderThread    
+RezMgr_TimeSlice_For_Prefetching    
+RezMgr_Prefetch_MemStream_Chunk_Size    
+RezMgr_Prefetch_MemStream_Chunk_Count   
+RezMgr_Prefetch_MemStream_Free_FrameCount   
+RezMgr_Prefetch_Flush_Queue 
+RezMgr_Prefetch_Force_Fail
+Use_Text_Offsets    
+Use_State_Fonts
+Tooltip_ID  
+Text_Offset_Y   
+Text_Offset_X   
+TextColor_ListSelected  
+TextColor_ListItem  
+TextColor_ListHover 
+TextColor_ListHeader    
+TextColor_Pressed   
+TextColor_Highlighted   
+TextColor_Disabled  
+TextColor       
+UIWidgetTransparency    
+UIUseTransparentRenderStyle 
+UIEnableTransparentRenderStyle  
+UIRenderStyle_NMap_RezID    
+UIRenderStyle_GreyScale_RezID   
+UIRenderStyle_Locked_RezID 
+UIRenderStyle_Highlight_RezID 
+DoPolyStringFullClip    
+EnablePolyStringDropShadows 
+IgnoreLayoutVersion 
+OutlineFocusWidget  
+ScrollBarCushion    
+CursorWidth 
+VerboseUIDebugging 
+WR_Material_Build_Win   
+WR_Material_Build_Win_Color_R   
+WR_Material_Build_Win_Color_G   
+WR_Material_Build_Win_Color_B   
+WR_Material_Build_Win_Color_LOD_Scale   
+WR_Material_Build_Win_Color_Var_Min 
+WR_Material_Build_Win_MaxPercent    
+WR_Material_Build_Win_OnFactor  
+WR_Material_Build_Win_OnOff_Rand_Pct    
+WR_Material_Build_Win_OnOff_Rand_Cnt    
+WR_Material_Build_Win_LOD_Reflect   
+WR_Material_Default_Ext_Reflect_Factor   
+WR_Water_Update_Scale   
+WR_Water_LOD_DstSqr 
+WR_Water_BumpScale_Scale    
+WR_Water_BumpScale_MovScale 
+WR_Water_Use_Version_2 
+ILTWorldRep_Metro   
+ILTWorldRep_Metro.Internal 
+WR_CullInteriorRooms    
+WR_ClipInteriorRooms    
+WR_CullInteriorProps    
+WR_CullInteriorGobjs    
+WR_DrawOverlayPortals   
+WR_OptimizeInteriorNavPolyCaching   
+Workshop_NavPorcessing  
+WR_LoadRooms        Set this to false to prevent rooms of interior prefabs from being loaded.   
+WR_InteriorMapScale 
+WR_DrawAll  
+WR_DrawNavMesh  Set this to non-zero to see the Navigation Mesh.    
+WR_DrawPhysics  
+WR_DrawExterior 
+WR_DrawExteriorBBs  
+WR_DrawInterior 
+WR_DrawSolid    
+WR_DrawProps    
+WR_DrawPropBBs  
+WR_DrawObjects  
+WR_DrawObjectBBs    
+WR_DrawTextured 
+WR_DrawIntLighting  
+WR_DrawShadows  
+WR_DrawStitches 
+WR_DrawWeather  
+WR_DrawGrass    
+WR_DrawSkyBox   
+WR_DrawWater    
+WR_DrawSectorLODs   
+WR_LoadProps    
+WR_LoadTextures 
+WR_LoadLightmaps    
+WR_LoadInteriors    
+WR_LoadGameObjects  
+WR_DebugDirtyRect   
+WR_DebugPortals 
+WR_DebugOccluders   
+WR_DebugFarPlane    
+WR_TracePropRenders 
+WR_DebugRayIntersect    
+WR_DebugSphereIntersect 
+WR_DebugSweptSphere 
+WR_DebugExtToIntPortals 
+WR_DebugDynamicLights   
+WR_ExtFarDist   
+WR_ExtFadeDist  
+WR_ExtDetailFadeDist    
+WR_ExtToIntDist 
+WR_ExtToIntFadeDist 
+WR_PropFarDist  
+WR_PropFarDist_Large_Scl    
+WR_PropFarDist_Small_Scl    
+WR_PropFadeDist 
+WR_FogFarDist   
+WR_ExtObjFarDist    
+WR_SLODFarDist  
+WR_LODDistanceScale 
+WR_ExtMinFarDist    
+WR_ShadowFarDist    
+WR_ExtToIntPortalColor  
+WR_CustomAmbientEnable  
+WR_CustomAmbientR   
+WR_CustomAmbientG   
+WR_CustomAmbientB   
+WR_Lighting_Mod2x   
+WR_ExtAmbient   
+WR_IntPortalAmbientScale    
+WR_IntFullbright    
+WR_ModelCameraLightInterior 
+WR_ModelCameraLightScale    
+WR_IntAmbientMaxWindowArea  
+WR_IntAmbientExtAmbientScale    
+WR_IntAmbientExtDiffuseScale    
+WR_EnvDefaultTimeSection    
+WR_EnvDefaultStartDayOffset 
+WR_EnvDayLength 
+WR_EnvSetDayOffset  
+WR_RezEvents    
+WR_PermRezEvents    
+WR_WeatherDebugType 
+WR_WeatherDebugIntensity    
+WR_WeatherRainHorzDistance  
+WR_WeatherRainVertDistance  
+WR_WeatherRainMaxVolume 
+WR_WeatherRainParticles 
+WR_WeatherRainRenderStyle   
+WR_WeatherRainTime  
+WR_WeatherRainLength    
+WR_WeatherRainAlpha 
+WR_WeatherRainTexture   
+WR_WeatherHailHorzDistance  
+WR_WeatherHailVertDistance  
+WR_WeatherHailMaxVolume 
+WR_WeatherHailParticles 
+WR_WeatherHailRenderStyle   
+WR_WeatherHailTime  
+WR_WeatherHailLength    
+WR_WeatherHailAlpha 
+WR_WeatherSnowHorzDistance  
+WR_WeatherSnowVertDistance  
+WR_WeatherSnowMaxVolume 
+WR_WeatherSnowParticles 
+WR_WeatherSnowRenderStyle   
+WR_WeatherSnowTexture   
+WR_WeatherSnowTime  
+WR_WeatherSnowScale 
+WR_SLODRenderStyle  
+WR_ShadowRenderStyle    
+WR_ShadowDistance   
+WR_ShadowSunAngleScale  
+WR_ShadowProjectScale   
+WR_ShadowProjectGroundDist  
+WR_ShadowDebugAlpha 
+WR_ShadowDebugPass  
+WR_ShadowAllowDoubleSided   
+WR_PrefabLODEnable  
+WR_PrefabLODScale   
+WR_PrefabLODOffset  
+WR_PrefabLODLoadOffset  
+WR_DLChangeMonitor  
+WR_DLChangeDistThresh   
+WR_DLPrefetchNavData    
+WR_DLInternalLoad   
+WR_DLWaitForProps   
+WR_DLWaitForStyle   
+WR_DLDisplayLoadScreen  
+WR_DLLoadIrrelevantMissionSpaces    
+WR_DLAutoSyncChangeMonitor  
+WR_OcclusionRatio   
+WR_MaterialLibRezID 
+WR_Int_MaxRoomVisits    
+WR_Int_OldRoomFlush     
+StringTableRezID    
+FourCC  
+MissionContact.ID   resource/worlds/PointsOfInterestTypes.xml   
+WR_SkyBox_FogRim_FogDst 
+WR_Ambient_GreenShift_Enable    
+WR_Ambient_GreenShift_R 
+WR_Ambient_GreenShift_G
+WR_Ambient_GreenShift_B 
+WR_Lightning_RainMin_For    
+WR_Lightning_Inv_Prob_Scale 
+WR_Lightning_FxID_0 
+WR_Lightning_FxID_1 
+WR_Lightning_FxID_0_Indoor  
+WR_Lightning_FxID_1_Indoor  
+WR_WorldTint_Color_RGB  
+WR_WorldTint_Fog_Scaler 
+WR_WorldTint_Move_Scaler    
+WR_WorldTint_Bright_Rescale_Factor   
+WR_MatrixView_Tex_RezID 
+WR_MatrixView_RS_RezID  
+WR_MatrixView_FX_0_ID   
+WR_MatrixView_FX_1_ID   
+WR_MatrixView_ForceOn   
+WR_MatrixView_ForceOn_Blend 
+WR_MatrixView_Min_T 
+WR_MatrixView_Max_T 
+WR_MV_Enabled   
+WR_MV_MaxDuration   
+WR_MV_MinDuration   
+WR_MV_MaxFrequency  
+WR_MV_MinFrequency  
+WR_MV_Blend 
+DL_InitToPrefetchRampTime    
+WR_OptimizeThrottle 
+WR_RenderScene_Clear_UseViewPort    
+WR_PropShadow_Enable    
+WR_MergeMesh_Enable 
+WR_Cook_COD_On_Load 
+WR_IntRenderFilter  
+WR_DebugConnectionNetworks  
+WR_GetSectors_UnOpt_Size    
+WR_LoadRoadMap  
+WR_UseOptimizedSectorQueries    
+WR_SortPropsForDrawing  
+WR_SectorLOD_R  
+WR_SectorLOD_G  
+WR_SectorLOD_B  
+WR_DrawInteriorNormals  
+WR_DrawExteriorNormals  
+WR_OverrideScreenClear  
+WR_OverrideScreenClearR 
+WR_OverrideScreenClearG 
+WR_OverrideScreenClearB 
+WR_Mottle_RS    
+WR_Mottle_Texture   
+WR_Mottle_Factor    
+WR_Mottle_Scale 
+WR_Mottle_Speed 
+WR_Mottle_MinTravelTime 
+WR_Mottle_MaxTravelTime 
+WR_Mottle_Enable    
+WR_WetExt_RS_RezID  
+WR_AllowIntBlockLoad    
+WR_WeatherParticle_Scale    
+WR_Projector_Flare_HalfSize 
+WR_Projector_Flare_ZDst 
+WR_Projector_Cone_SliceCount    
+WR_Projector_Cone_SizeScale 
+WR_Projector_Cone_SizeScale_Z   
+WR_Projector_Cone_Alpha_Scale   
+WR_Projector_Cone_UglyE3Hack_0  
+WR_Projector_Light_Chars    
+WR_UseNewFrustumCullOfSectors 
+LoadScreen_Tex_RezID    
+WR_DLLoadScreenStartPercentage  
+WR_DLLoadScreenTotalPercentage  
+DL_FloorHeight  
+Grass_Draw_Dst  
+Grass_Wind_Factor   
+Grass_Load_Percent
+WR_PropLight_CameraScale    
+WR_PropLight_AmbientAdd_R   
+WR_PropLight_AmbientAdd_G   
+WR_PropLight_AmbientAdd_B   
+WR_Prop_Detail_Culling  
+DetailCfg_Detail    The graphics detail level of the game.  
+DetailCfg_Memory    The memory usage of the game.   
+PropShadow_Tex_PoleFader    
+PropShadow_Tex_Box  
+PropShadow_Tex_Circle   
+PropShadow_Tex_AlphaScale   
+PropShadow_Tex_AlphaAdd 
+PropShadow_Load    
+WR_ProjectorLight_Scale_Add 
+WR_ProjectorLight_Scale 
+WR_WetExt_Enable    
+WR_WetExt_Tex_Scale
+WR_SkyBox_FogRim_Height 
+WR_SkyBox_FogRim_Height_Scale   
+WR_SkyBox_Base_Sprite_Dist  
+WR_SkyBox_Base_Sprite_Size  
+WR_SkyBox_Water_Offset_Height   
+WR_LensFlare_Scale  
+WR_LensFlare_InOut  
+R_LensFlare_Y_Limit    
+WR_RenderStyle_Trans     
+WR_MatCtrl_IntSpec_RS_Base  
+WR_MatCtrl_IntSpec_RS_Add_Trans 
+WR_MatCtrl_IntSpec_RS_Add   
+WR_MatCtrl_IntSpec_Def_Power    
+WR_TextExt1_RS_RezID   
+WR_TextExt0_Tex_RezID   
+WR_TextExt0_RS_RezID 
+WR_MatCtrl_IntDtl_RS_Base   
+WR_MatCtrl_IntDtl_RS_Add_Trans  
+WR_MatCtrl_IntDtl_Def_Scale
+WR_HideNavPoly      Any nav-poly id matching this number will not be rendered by drawnavmesh.   
+WR_Projectors_Draw  
+WR_Projectors_Draw_DstSqr   
+WR_Lighting_Ext_DoubleShadow_Fix_Scale  
+WR_UseOptimizedPhysics  
+WR_Prefab_Prefetch_Large_Meters 
+WR_Prefab_Prefetch_Huge_Meters
+WR_Reflect_EnvMap_Enable    
+WR_Reflect_EnvMap_Size  
+WR_Reflect_EnvMap_SizeScale 
+WR_Reflect_EnvMap_Min   
+WR_Reflect_EnvMap_TooClose  
+WR_Reflect_EnvMap_Angle 
+WR_Reflect_EnvMap_Amb_Scale 
+WR_Reflect_EnvMap_Amb_Add   
+WR_Reflect_EnvMap_Dark_Factor   
+WR_LightMapCacheSize            
+FX_Vel_To_AngVel    
+FX_Vel_To_AngVel_Goto   
+FX_Bounce_Factor_Prob   
+FX_Bounce_Factor    
+FX_AngVel_To_LinVel 
+FX_AngVel_Clamp    
+RainSplash_Max_Count    
+RainSplash_FxID 
+RainSplash_FxID_Day 
+RainSplash_RetryAttempts    
+RainSplash_Radius   
+RainSplash_RndRot_Mag   
+RainSplash_FX_Len_Scale
+ExecutionFX 
+ExecutionFXOffsetType   
+CastingFX
+MaximumScriptDelayMS    
+ILMovementDatabaseListRezID 
+ILMovementDatabase0RezID    
+ILMovementDatabase1RezID    
+ILMovementDatabase2RezID    
+ILMovementDatabase3RezID    
+ILMovementDatabase4RezID    
+ILMovementDatabase5RezID    
+ILMovementDatabase6RezID    
+CharacterAnimationTableRezID    
+EmoteQueryDurationMS    
+DelayScriptsIfNotPrefetched 
+ReleaseAnimsPrefetched 
+cl_NameTagWidth 
+cl_NameTagHeight    
+CombatText_Enable   
+ScriptShowAdjust    
+ShowServerUpdate    
+ShowAnimDeltas  
+ShowJump    
+ShowStateText   
+ShowNamesOfInvisPlayers 
+ShowOrgNamesInPvP   
+AlwaysShowOrgNames  
+FloatingHealThreshold   
+DamageNumberFX  
+HealNumberFX    
+DamageNumberAttachNode  
+DamageNumberAttachNode_1    
+DamageNumberOffset  
+DamageFX_Max_Dst    
+DamageTextXSpread   The horizontal spread of the text that pops up over the players head.   
+DamageTextYSpread       The vertical spread of the text that pops up over the players head. 
+ContinuousEvadeShield   
+DrawNameTagsSelf    Whether or not your own name tag will be drawn. 
+DrawNameTagsTeam        When friendly name tags are drawn. (0 never, 1 always, 2 when selected, 3 mouse over)   
+DrawNameTagsOther       When NPC and other player name tags are drawn. (0 never, 1 always, 2 when selected, 3 mouse over)   
+ShowPlayerNames Whether or not to display any name tags 
+ShowMissionNames    
+AlwaysShowHealth    
+ShowAllHealthInCombat   
+HealthBarScale  
+MaxHealthBarWidth   
+MaxHealthBarHeight  
+MaxPVPImageWidth    
+MaxHPVPImageHeight  
+EvadeShieldFirstSwitch  
+EvadeShieldSecondSwitch 
+EvadeShieldThirdSwitch  
+ShowMouseOverTargetHealth   
+PlayBaseAnimOnEquippedWeapon    
+NameOffsetY 
+NameOffsetYClamp    
+NameOffsetYOverageFactor    
+NameTagMaxDist  
+NameTagMinDist  
+NameTagMedDist  
+NameTagLongDist 
+NameTagColorBG  
+NameTagColor    
+HealthBarColor  
+HealthBarBG 
+audio_NoRichworldFootsteps  
+MaxCombatRenderRange    
+MaxCombatRenderHeight   
+AllowedServerPosTweak   
+MaxHeightAdjust 
+JumpAnimationName   
+Stand_JumpCarLength 
+JumpAnimationNameStatic 
+Stand_Jump  
+JumpAnimationNameForward    
+JumpAnimationNameBackward   
+Stand_JumpB 
+JumpAnimationNameLeft  
+Stand_JumpL JumpAnimationNameRight  
+Stand_JumpR 
+JumpLandAnimationNameForward    
+Land_RunF   
+JumpLandAnimationNameBackward   
+Land_RunB   
+JumpLandAnimationNameLeft   
+Land_StrafeRunL 
+JumpLandAnimationNameRight  
+Land_StrafeRunR 
+JumpLandAnimationNameStatic Land    
+JumpFatalAnimationName  
+Stand_JumpF-Prone   
+JumpHyperAnimationName  
+Stand_JumpF 
+JumpPlayStaticAnimDistance  
+PlayerExtrapolateMovement   
+Combat_ShowAllIdleName  
+CombatHyperDodge    
+CharacterMaxServerDistSqr   If the client-side character gets more than this distance away from their true server position, they will just teleport to their server position.   
+CharacterMinServerDistSqr   The client-side character will not adjust to the server position until they are further than this distance square from the server position. 
+CharacterServerDistInterpRate   
+CharacterMaxServerDistInterpSpeed   
+CharacterMaxServerAnimateDistSqr        A character will play an animation while adjusting to a server position at this squared distance or further.    
+CharacterTurnInterpRate 
+CharacterMaxTurnInterpSpeed 
+WallImpactRange 
+CharacterShowServerPos  
+CombatMinIdleDuration   
+CombatMaxIdleDuration   
+CombatIdleChangeChance  
+CombatIdle3Duration 
+CombatIdle3Chance   
+CombatIdleInterpTime    
+MovementStoppableSpeed  
+MovementStopRatio   
+EnablePlayerLookAt  Allow the player's head to look at the targeted object. 
+ViewConstraintAngle The most, in degrees, the player's head can turn to look at something.  
+ViewConstraintAngleMax  The most, in degrees, the player's head can turn.   
+TurnHeadTime        The amount of time it takes for the player to turn their head towards the target.   
+MaxLookDist The distance, in meters, the player will stop looking at the target since it is too far away.   
+MaxCameraLookAngle      The most, in degrees, the camera can point away from the player's look direction while still turning the head.  
+CombatClientSmartWeaponEquip    
+CombatMoveWeaponInvalidateTime  
+UpdateDeltaCharacterMvt
+CmpChar_HackView_Enable 
+CmpChar_HackView_MinLvl_Float   
+CmpChar_HackView_MaxLvl 
+DamageFX_Perc_Small 
+DamageFX_Perc_Big   
+MinAnimatedTurnAngle    The player will snap turn if they attempt an animated turn less than this many degrees. 
+ScriptAdjustPosDurationPercentage   
+ScriptAdjustYawDuration 
+StakeRezID  
+FreeAttackHitFX 
+ShowBulletTrails   
+InteractiveEmotePopDistance 
+ShowTitleInName 
+CameraHeightOffsetSitGrnd   
+CameraHeightOffsetSitChair  
+CameraHeightOffsetOther 
+DebugNoise  
+DebugRipple 
+DL_ServerUpdatePosReload
+UseRandomModelFromRezList   
+UpdateDeltaModel    
+ModelSkipUnloadedAnimations 
+ModelPrefetchedAnimationCount   
+ModelPrefetchedAnimationLifetime    
+GO_ModelAutoAnim_ProbOfNonLoop  
+GO_ModelAutoAnim_MinLoopTime    
+GO_ModelAutoAnim_MaxLoopTime   
+PvPServer   
+PvPMaxSafeLevel 
+ILFocusTimeMode 
+ILCombatDatabaseListRezID   
+ILCombatDatabaseMasterID   
+ILCombatDatabase0RezID  
+ILCombatDatabase1RezID  
+ILCombatDatabase2RezID  
+ILCombatDatabase3RezID  
+ILCombatDatabase4RezID  
+ILCombatDatabase5RezID  
+ILCombatDatabase6RezID  
+CombatMinUnlockDuration 
+CombatResponseLag  
+AlwaysDoBulletTime      
+AI_SoftBoundaryPeriod   
+AI_BoundaryAgentPlayerEnterWorldGracePeriod 
+AI_BoundaryAgentGracePeriod 
+AI_PeddyToAgentTime 
+AI_FakeEveryBoundaryIllegal 
+AI_FakeEveryBoundaryLegal   
+AI_FakeAlwaysTriggerAgent   
+AI_FakeNeverTriggerAgent    
+AI_TaggedAccessNodesSafe    
+AI_CelebritiesAgentSafe 
+BoundaryAgentsArePlayerLevel    
+OnlyRippleDeterminesBoundary    
+CopyMassiveData If False, massive media won't be displayed. 
+MassiveDebugTag     Displays Massive properties as a screen aligned tag: 1 = pos, 2 = audio 
+MassiveDebugTagExpanded If true display surface normal and camera orientation used to determine angle   
+MassiveGetGeometricsFromFX      If true, we get pos/orient/half extents from the FX not from the GameObject.    
+MassiveNumOccludedToConsiderInView      The maximum number of points that can be occluded to consider the massive element in view.  
+MassiveMaxAudioDist The max distance in cms that we can hear some massive media.    
+MassiveAudioAttenuationFromBeingBehindMedia     The amount the volume is attenuated if the player camera is behind the media.   
+MassiveDebugTagWidth    
+MassiveDebugTagHeight   
+MassiveDebugTagColorBG  
+MassiveDebugTagColor    
+MassvieMinPickingHalfHeight 
+MassiveMinScalingFactor 
+MassiveMaxScalingFactor 
+MassiveMaxPickingDist 
+TARGETCHOOSER_DetectionRange    
+TARGETCHOOSER_DetectionHeight   
+TARGETCHOOSER_PassiveTimeBetweenPings   
+TARGETCHOOSER_SpawnedTimeBetweenPings   
+TARGETCHOOSER_AttackRange   
+AI_VisionNormalWidth         
+AI_MaxHearingRange  
+AI_MaxVisionRange   
+AI_MinHearingRange  
+AI_MinVisionRange   
+AI_NPCsCheckLevel       NPC's will check the level of their opponents before choosing to attack.    
+AI_AggroDecayTime   
+AI_DelayBeforeDecay 
+AI_NewAggroBaseValue    
+AI_ProximityAggroBaseValue  
+AI_AggroDecoyAdditionalValue    
+AI_MaxAggroFudgeFactor  
+TauntAggroBonus The factor of hate above the highest current hatred taunt will give 
+AI_GangMasterTargetAggroValue       The amount of aggro a new AI gets on the target of an ambush or sequence   
+AI_MissionNPCProximityAggroTestPeriod   
+AI_SearchListDetectabilityPeriod    
+AI_NoiseDetectionThreshold  
+AI_NoiseDetectionOtherRoomModifier  
+AI_NoiseDetectionDistanceModifier   
+AI_IgnoreNoiseDistance  
+AI_DetectionDecayPeriod 
+AI_DetectionLongTermPeriod  
+AI_NoTargetableHaterEvadeStatePeriod
+RW_Heli_TurnPerSecond   How fast helicopter will turn on the XZ plane per second (yaw). 
+RW_Heli_ModelNode   
+RW_Heli_MaxHeightChange 
+RW_Heli_PathNodesToCache    
+RW_Heli_CurrNodeWeight  
+RW_Heli_RotateAboutCenter       If set true helicopters attempt to do their turns about the blade.  
+RW_Heli_Speed   
+RW_Heli_DoCalcRoll  If set true helicopters will tilt a bit as they make a turn.    
+RW_Heli_RollMultiplier  If set to -1 will invert the angle the heli rolls at.   
+RW_Heli_RollMax Max tilt (or roll) to apply to the Helicopter whist it is turning.  
+RW_Heli_RollPerSecond   How fast the helicopter can tilt per second.    
+RW_Heli_RollOffset  Value that is always added to the computed roll (or tilt) value.    
+RW_Heli_YawOffset   Value that is always added to the computed yaw value.   
+RW_Heli_YOffset_Avg Median value for how far above the streets helis fly.   
+RW_Heli_YOffset_Stddev  
+RW_Heli_YOffset_Max 
+RW_Heli_YOffset_Min 
+RW_Heli_YChangePerSecond    How fast Heli can change its altitude   
+RW_Heli_DoCalcPitch 
+RW_Heli_PitchMax    Max Pitch to apply to the Helicopter whist it is turning.   
+RW_Heli_PitchPerSecond  How fast the helicopter can inc/dec Pitch per second.   
+RW_Heli_PitchMultiplier 
+RW_Heli_PitchOffset Value that is always added to the computed pitch value. 
+RW_Heli_Leaflet_FXID    FXID for a leaflet. 
+RW_Heli_Leaflet_Time    How much time between each Heli's drop of leaflets. 
+RW_Heli_Leaflet_Prob    Probability of trash_mgr generating a leaflet.  
+RW_Heli_Leaflet_MaxNumber   Max number of heli dropped leaflets allowed at any given time.  
+RW_Heli_Leaflet_PerDrop How many leaflets a helicopter will dump at any given second.   
+RW_Heli_Leaflet_MinDist 
+RW_Heli_Leaflet_MaxDist     
+XPKnob  
+ExperienceMaxMissionEvent
+AI_LogicUpdatePeriodDefcon5 
+AI_LogicUpdatePeriodDefcon4 
+AI_LogicUpdatePeriodDefcon3 
+AI_LogicUpdatePeriodDefcon2 
+AI_LogicUpdatePeriodDefcon1 
+AI_LogicUpdatePeriodVariancePercentage  
+AI_SearchForCharacterSniffTime  
+AI_AwareTurnTime    
+AI_FollowTargetUpdateTime   
+AI_FollowStandSqRange   
+AI_FollowWalkSqRange   
+AI_WanderRange  
+AI_DelayBetweenPatrolRequests   
+Overlay_MinDistanceFromNode     The minimum distance in cm an AI has to be from a node before it is considered to be there  
+Overlay_EmoteDistance       How close an NPC should get to another for the interactive emotes   
+AI_EmoteDelay   
+AI_GuardWanderRange 
+AI_GuardMinWaitTime 
+AI_GuardMaxWaitTime 
+AGENT_TransformTime 
+AI_AgentChaseTargetUpdateTime   agent brain frequency   
+AI_AgentChaseEngageDistance how close to be before considering attacks  
+AI_AgentChaseAlwaysEngageDistance   
+AI_AgentChaseEngagePeriod   
+AI_SentinelAgentSniffTime   
+AI_SentinelAgentDetectRange 
+AI_SentinelAgentDebounceTime    
+AI_SentinelAgentChaseTime   
+AI_AgentNotAttackedTime How long the agent has to be outside combat before despawning.  
+AI_AgentCantAttackTargetTime    How long the agent can go without attacking his target before despawning.   
+AGENT_AttackDistance    
+AGENT_BackoffDistance   
+AGENT_WeaponEngageDist  
+AGENT_MeleeEngageDist   
+AGENT_ReinforcementsNumber  
+AGENT_LeaveCorpseWhenKilled Should an agent send a GoAway when it dies  
+AGENT_Silence   This completely shuts up agent chat.    
+AI_HardlineDetectSqRange    
+AI_HardlineObjectSearchRange    
+AI_TaskRange    
+AI_MaxTaskRange 
+GANG_AttackActionPeriod 
+GANG_ReactAnim  
+GANG_InPositionFudge    
+GANG_AttackIdlePeriod   
+Simulacra_AttackActionPeriod    
+Simulacra_TauntActionPeriod 
+Simulacra_TauntDistance 
+AI_AttackActionPeriod  
+AI_TalkDuration How long, in seconds, an NPC spends talking.    
+AI_TalkDurationFriendly How long, in seconds, a friendly NPC spends talking.    
+AI_TalkDurationTaker    How long, in seconds, a taker NPC spends talking.   
+AI_EvadeTimerPeriod 
+AI_AbilityHideOnSight   
+AI_AbilityZapOnSight    
+AI_MaxAlarmSearchBox    
+AI_AlarmPullRange   
+AI_AlarmPullMaxRange        
+PringleShortDistance    
+PringleShortPercent 
+PringleLongDistance 
+PringleLongPercent  
+PringleDrag PringleMaxVelocity  
+PringleAccelMode    
+PringleAccelFactor  
+PringleInterpPositionDuration   
+PringleInterpLookAtDuration 
+PringleHeight   
+PringleBase PringleLength   
+PringleMidLength   
+PringleWidth    
+PringleMidWidth
+MaxPrefabPropOverlap    Maximum distance that a prefab prop can extend beyond the edge of a prefab 
+JumpMinDuration The minimum seconds a jump will last.   
+JumpMaxDuration The maximum seconds a jump will last.   
+JumpAverageSpeed    The horizontal speed of a jump. 
+JumpMaxSpeed    The maximum speed of a jump. Used even if cause jump to be longer than JumpMaxDuration. 
+HyperJumpInitDist   Initial allowed distance for a level 0 hyper-jump.  
+HyperJumpScaleDist  Distance gain per level of hyper-jump.  
+HyperJumpMaxDist    Maximum distance change of a hyper-jump.    
+HyperJumpInitHeight Initial allowed height change for a level 0 hyper-jump. 
+HyperJumpScaleHeight    Height gain per level of hyper-jump.    
+HyperJumpMaxHeight  Maximum height of a hyper-jump. 
+HyperJumpMaxPeakHeight      HyperJump will only jump higher than this height if it needs to.    
+FreeJumpDamagePerMeter      Damage per meter character falls beyond their allowed height change.    
+HyperJumpDamagePerMeter FreeJumpInitDist    Initial allowed distance for a level 0 jump.    
+FreeJumpScaleDist   Distance gain per level of jump.    
+FreeJumpMaxDist Maximum distance change of a normal jump.   
+FreeJumpInitHeight  Initial allowed height change for a level 0 jump.   
+FreeJumpScaleHeight Height gain per level of jump.  
+FreeJumpMaxHeight   Maximum height of a jump.   
+FreeJumpPeakHeight  The normal jump will go this much higher than than the height of the source and destination.    
+HyperJumpPeakHeight     The hyper-jump will go this much higher than than the height of the source and destination. 
+HyperJumpAimedPeakHeight    The hyper-jump will go this much higher than than the height of the source and destination when it is an aimed jump.   
+JumpPhysicsSphereRadius Radius of the sphere to be run along the jump arc to determine if the player would clip through geometry.     
+CombatQuickPathMaxLength     
+NavMeshQuickPathMaxIterations  
+MovementStrafeVelocityScale Player will move forward or backward at this percent of their full speed when they are strafing while moving (between 0.0 and 1.0).  
+MovementAsserts 
+MovementBlockLoadingPrefabs     Set this to 0 to allow the client to walk into un-loaded prefabs.   
+DetectDiff_WalkF    
+DetectDiff_WalkB    
+DetectDiff_RunF 
+DetectDiff_JumpF    
+DetectDiff_JumpCar  
+DetectDiff_JumpOnCar    
+DetectDiff_FightMode    
+MovementDiagnostics Increased logging level toggle for predict view events (client only)    
+ClientPredictMaxTime    Time (seconds) before a predicting client sends a "heartbeat" update    
+PredictNearThreshold    Magnitude of position change needed to trigger send from client 
+PredictMaxHeightChange  Magnitude of max height change to trigger send from client / verification rejection on server   
+MaxSentPositionTime     Maximum amount of time, in milliseconds, to keep our history of sent positions. 
+Richworld_Enabled   
+Richworld_Disable_Override  
+Richworld_ForceHelicopters      Forces Helicopters to remain active even if the rest of Richworld is removed. This will trumpt Richworld_Enabled and Richworld_Disable_Override.    
+Richworld_ControlDensitiesFromEnvironment   
+Richworld_CarDensity    
+Richworld_PedDensity    
+Richworld_CarDensityUser    
+Richworld_PedDensityUser    
+Richworld_HeliDensity   
+Richworld_HeliDensity_Override  If this is provided values from the EnvironmentCalendar will be ignored (in minutes).   
+RichworldHeli_RespawnTime_Avg   Average amount of time between helicopters are valid for spawning (in minutes).    
+RichworldHeli_RespawnTime_Stddev    Standard deviation from the average helicopter respawn time (in minutes).   
+RichworldHeli_RespawnTime_Min   Minimum amount of time between helicopter spawns (in minutes).  
+RichworldHeli_RespawnTime_Max   Maximum amount of time between helicopter spawns (in minutes).  
+Richworld_DeltaSimilarOffsets   
+Richworld_MaxObjectsPerLink 
+Richworld_SpaceBeforeSpawning   
+Richworld_PeddyOffsetRange  
+Richworld_PeddyOffsetBase   
+Richworld_TrafficLightRange 
+Richworld_PeddyWalkSpeedRange   
+Richworld_PeddyWalkSpeedBase    
+Richworld_CarSpeed  
+Richworld_CarFollowingDistance  
+Richworld_CarStoppedMinSpace    
+Richworld_CarDrivingMinSpace    
+Richworld_CarSlowForLightDistance   
+Richworld_CarGoStraightChance   
+Richworld_CarTurnLeftChance 
+Richworld_CarTurnRightChance    
+Richworld_MaxCars   
+Richworld_MaxPeddies    
+Richworld_MaxHelicopters    
+Richworld_TestAvoid 
+Richworld_PidgeyDescentSpeed    
+Richworld_PidgeyTurn    
+Richworld_PidgeyRunTurn 
+Richworld_PidgeyMaxWander   
+Richworld_PidgeyWalkSpeed   
+Richworld_PidgeyRunSpeed    
+Richworld_PidgeyChanceOfSleep   
+Richworld_PidgeySleepLength 
+Richworld_PidgeyRunAwaySqThresh 
+Richworld_PidgeyFlyAwaySqThresh 
+Richworld_PidgeyFlyingMaxWander 
+Richworld_PidgeyFlyingTurn  
+Richworld_PidgeyFlyingSpeed 
+Richworld_PidgeyFlockAltitude   
+Richworld_PidgeyCheckLanding    
+Richworld_PidgeyLandingZoneSafetySqDist 
+Richworld_PidgeyTakeOffSpeed    
+Richworld_PidgeyTakeOffClimb    
+Richworld_PedSpeed  
+Richworld_SpawnIn   
+Richworld_SpawnOut  
+Richworld_PeddyAvoidance    
+Richworld_Sound 
+Richworld_CarFast   
+Richworld_WidthSingle   
+Richworld_WidthNarrow   
+Richworld_WidthWide 
+Richworld_WidthNormal   
+Richworld_Speed15   
+Richworld_Speed30   
+Richworld_Speed60   
+Richworld_Speed90   
+Richworld_PopularityRare    
+Richworld_PopularityUncommon    
+Richworld_PopularityCommon  
+Richworld_PopularityPopular 
+Richworld_PedSearchDist 
+Richworld_PedSearchDistMin  
+Richworld_PedMinAvoidAng    
+Richworld_PedMaxAvoidAng    
+Richworld_CarStoppedSpeed   
+RW_PedCollisionMinx 
+RW_PedCollisionMaxx 
+RW_PedCollisionMiny 
+RW_PedCollisionMaxy 
+RW_PedCollisionMinz 
+RW_PedCollisionMaxz  
+RW_Vehicle_SpawnRevalidate  
+RW_Vehicle_SpawnRevalidate_OrientAABB   
+RW_Heli_LoadSectorData  
+PeddyDemeanorChance     This is chance (0.0 - 1.0) that a peddy will have a random mood.    Casual  Fidgety Stoic   Cocky   Shy 
+RW_Draw 
+AGENT_Draw 
+RW_MoveBackDistance
+DefaultHackToolSlot 
+DefaultWeaponSlot    
+MaxBackpackSlots
+GaussianTacticRolls 
+OldTacticRolls  
+AlwaysRoll50    
+MaxConsistencyStat
+ModelShadows_OnCars
+RW_ApproximateWheelBase
+RW_CarCombatRange
+RW_CarPosLength
+RW_CarNegLength
+RW_CarCollisonMinY
+RW_CarCollisonMaxY
+RW_CarCollideWithNPCs
+RichworldAccelerateVehicle
+RW_Vehicle_DoBadTrafficLinkCheck
+RW_Vechile_DoStopLightCheckNewWay
+RW_Vehicle_LogicalMovementClamp
+RW_Vehicle_OverallMovementClamp
+RW_PedFightVanishDist
+RW_PedFightFreezeDist
+RichworldVarianceEnabled
+RW_MoveBackDistance
+Audio_RichworldVehiclePitch
+Overlay_MinDistFromNode
+ShowNamesofInvisiblePlayers
+SeeInvisible
+
+
+ADMIN COMMANDS:
+
+
+GrantGameFeature
+GainCQPoints    
+GainReputation  
+LevelUp 
+GMDisguise  
+CombatSetWeights    
+SetPool 
+SpawnItemCmd    
+SpawnNPCCmd 
+TeleportToPlayerCmd 
+WorldTeleportCmd    
+RemoveAbilityItem   
+AddAbilityCmd   
+GainExperience  
+GainInformation 
+SetMinHealthCmd 
+AbilityRemoveAll    
+AbilityRemove   
+AddInventoryItem    
+ConCommand  
+SelfResuscitate 
+SimulateDBFailure   
+NoWho   
+SoeChat 
+SetModel    
+FlashTraffic    
+Repel   
+ToggleOrgDoorLock   
+DespawnSequence 
+SpawnSequence   
+ListSpawnedSequences    
+ListActiveSequences 
+StopSequence    
+StartSequence   
+SetWave 
+SetSequence 
+AddWave 
+AddSequence 
+DeleteSequence  
+DeleteWave  
+ListSequence    
+ListSequences   
+ListWave    
+ListWaves   
+DeleteObject    
+DebugObject 
+CheckRS 
+CheckTrGS   
+ListOrgPoints   
+ListWorldEvents 
+UntriggerWorldEvent 
+TriggerWorldEvent   
+Broadcast   
+MissionInfo 
+MissionWin  
+NetStatsFull    
+ExitToLoadingArea   
+BugInternal 
+AddAggro    
+AIState 
+IdentifyCharsheet   
+Attackable  
+SeeInvisible    
+ShowPrivileges  
+TrackScenarios  
+ShowPenalties   
+BootFromTeam    
+AbortMission    
+NoTeams 
+DenyPlayerMissions  
+Invulnerability 
+KillNPC 
+CreateItem  
+Invisibility    
+Fly 
+AlertList   
+SnoopPlayer 
+PacifyPlayer    
+FreezePlayer    
+GiveItemToPlayer    
+KillPlayer  
+BootPlayer  
+SendPlayerToLoadingArea 
+SummonPlayer    
+SilencePlayer
+
+GMs
+Cypherites
+Pluribus Neo
+Niobe   
+Merovingian 
+Machines    
+Zion Military       
+Invalid 
+
+NEW:
+
+CommitRSI
+SetTattooType
+SetSkinTone
+SetFacialHairColor
+SetFacialHairType
+SetHairColor
+SetHairType
+SetHeadType
+SetBodyType
+GetTattooType
+GetSkinTone
+GetFacialHairColor
+GetFacialHairType
+GetHairColor
+GetHairType
+GetHeadType
+GetBodyType
+GetGender
+SetFactionLeader
+GetLuggableSpawnerInfo
+GetLuggableInfo
+SetRank 

@@ -1,0 +1,122 @@
+# emacs-mode: -*- python-*-
+import random
+import traceback
+import obj
+import combat_defines as CD
+import math
+import combat_utility as CU
+_COMBAT_PREFERRED_TACTICAL_BONUS = 0
+
+def getTacticalMod(tacticalSetting, opponentTacticalSetting):
+    if CU.isPreferredTactical(tacticalSetting, opponentTacticalSetting):
+        return _COMBAT_PREFERRED_TACTICAL_BONUS
+    else:
+        return 0
+
+
+
+def getTacticSpecificArmorPiercingPercent(tacticalSetting):
+    if (tacticalSetting == constants.combat.POWER):
+        return 0.5
+    return 1.0
+
+
+
+def getBaseRangedValue(player):
+    modifier = 0
+    if ((player.equippedItemType == constants.combat.RANGED_SINGLE_PISTOL) or (player.equippedItemType == constants.combat.RANGED_DOUBLE_PISTOL)):
+        modifier = 5
+    elif (player.equippedItemType == constants.combat.RANGED_SHOTGUN):
+        outputToAll('Shotgun currently not supported')
+    elif (player.equippedItemType == constants.combat.RANGED_MACHINE_GUN):
+        modifier = 10
+    elif (player.equippedItemType == constants.combat.RANGED_RIFLE):
+        modifier = 15
+    return modifier
+
+
+
+def getRangedVsMeleeAttackModifier(attacker, defender, result):
+    if ((CU.isUsingWeapon(attacker.equippedItemType) == False) or (CU.isUsingWeapon(defender.equippedItemType) == True)):
+        return 0
+    base_modifier = 0
+    if (defender.opponentCount > 1):
+        if attacker.allowFiringIntoMeleePenalty:
+            base_modifier = -15
+        CU.outputCombatDebugMessage('Firing into melee penalty negated due to ability', 3)
+    modifier = getBaseRangedValue(attacker)
+    if (result.distance == constants.combat.SHORT_RANGE):
+        if (attacker.allowFiringAtMeleeRangePenalty == 0):
+            CU.outputCombatDebugMessage('Firing at short range penalty negated due to ability', 3)
+            return base_modifier
+        modifier = (modifier * -1)
+    elif (defender.allowMeleeAtRangedPenalty == 0):
+        CU.outputCombatDebugMessage('Melee at ranged penalty negated by ability', 3)
+        return base_modifier
+    return (base_modifier + modifier)
+
+
+
+def getRangedVsMeleeDefenseModifier(attacker, defender, result):
+    if ((CU.isUsingWeapon(defender.equippedItemType) == False) or (CU.isUsingWeapon(attacker.equippedItemType) == True)):
+        return 0
+    base_modifier = 0
+    if (attacker.opponentCount > 1):
+        if defender.allowFiringIntoMeleePenalty:
+            base_modifier = -15
+        CU.outputCombatDebugMessage('Firing into melee penalty negated due to ability', 3)
+    modifier = getBaseRangedValue(defender)
+    if (result.distance == constants.combat.SHORT_RANGE):
+        if (defender.allowFiringAtMeleeRangePenalty == 0):
+            CU.outputCombatDebugMessage('Firing at short range penalty negated by ability', 3)
+            return base_modifier
+        modifier = (modifier * -1)
+    elif (attacker.allowMeleeAtRangedPenalty == 0):
+        CU.outputCombatDebugMessage('Melee at ranged penalty negated by ability', 3)
+        return base_modifier
+    return (base_modifier + modifier)
+
+
+
+def getOpponentCountModifier(player):
+    if (player.opponentCount > consolevar.CombatMultiOnOneCount):
+        if player.allowMultiOnOnePenalty:
+            return (player.opponentCount * -5)
+        CU.outputCombatDebugMessage(('Multi-on-one penalty negated due to ability for player %d' % player.slot), 3)
+        return 0
+    else:
+        return 0
+
+
+
+def getMultiOnOnePenalty(player):
+    if (player.opponentCount > consolevar.CombatMultiOnOneCount):
+        if player.allowMultiOnOnePenalty:
+            return (player.opponentsFought * -5)
+        if (player.opponentsFought < 3):
+            CU.outputCombatDebugMessage(('Multi-on-one penalty negated due to ability for player %d' % player.slot), 3)
+            return 0
+        return ((player.opponentsFought - 2) * -5)
+    else:
+        return 0
+
+
+
+def getAttackerMods(attacker, defender, result):
+    multiMod = getMultiOnOnePenalty(attacker)
+    rangedMod = getRangedVsMeleeAttackModifier(attacker, defender, result)
+    out_modifier = (multiMod + rangedMod)
+    return out_modifier
+
+
+
+def getDefenderMods(attacker, defender, result):
+    multiMod = getMultiOnOnePenalty(defender)
+    rangedMod = getRangedVsMeleeDefenseModifier(attacker, defender, result)
+    out_modifier = (multiMod + rangedMod)
+    return out_modifier
+
+
+
+# local variables:
+# tab-width: 4

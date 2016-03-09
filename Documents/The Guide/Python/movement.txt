@@ -1,0 +1,50 @@
+# emacs-mode: -*- python-*-
+import traceback
+demeanors = ['None',
+ 'Confused',
+ 'Stunned',
+ 'Enraged',
+ 'Blind',
+ 'Powerless',
+ 'Dazed',
+ 'Staggered',
+ 'OffBalance',
+ 'Sexy',
+ 'Sultry',
+ 'Shy',
+ 'Shifty',
+ 'Regal',
+ 'Cocky',
+ 'Stoic',
+ 'Fidgety',
+ 'Sly',
+ 'Cautious',
+ 'Aggressive',
+ 'Bouncy',
+ 'Casual',
+ 'Drunk',
+ 'Hurt',
+ 'Cold',
+ 'Umbrella']
+
+def Init():
+    globs = globals()
+    offset = 0
+    for name in demeanors:
+        name = name.replace(' ', '')
+        name = name.replace('-', '')
+        name = ('Demeanor_' + name)
+        globs[name] = offset
+        offset += 1
+
+
+
+Init()
+
+def GetDemeanorList():
+    return demeanors
+
+
+
+# local variables:
+# tab-width: 4

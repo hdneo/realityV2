@@ -1,0 +1,91 @@
+# emacs-mode: -*- python-*-
+import random
+import traceback
+import obj
+import combat_defines as CD
+import missionvalidate as mv
+import combatvalidate as cv
+import stringtable_client as StringTable
+import ability.utility as Utility
+from ability.utility import getAbilityName
+from ability.defines import *
+import ltfxmap as FX
+import ability.effects as EFFECTS
+import virii_defines as VIRII
+AFFECTVISION1_TIME = VIRII.VIRII_LEVEL_1_DURATION
+AFFECTVISION2_TIME = VIRII.VIRII_LEVEL_2_DURATION
+AFFECTVISION3_TIME = VIRII.VIRII_LEVEL_3_DURATION
+MOVEMENTDISRUPT1_TIME = VIRII.VIRII_LEVEL_1_DURATION
+MOVEMENTDISRUPT2_TIME = VIRII.VIRII_LEVEL_2_DURATION
+MOVEMENTDISRUPT3_TIME = VIRII.VIRII_LEVEL_2_DURATION
+DISABLEABILITY1_TIME = 500
+MOVEMENTDISRUPT1_EFFECT = 25
+MOVEMENTDISRUPT2_EFFECT = 50
+MOVEMENTDISRUPT3_EFFECT = 75
+
+def DeflectBullets1Effect_DirectObject(subject, msg):
+    Utility.outputAbilityDebug('DeflectBullets1: DirectObject')
+    procs = ('',
+     'PlayFX',
+     '',
+     '')
+    subject.AbilityInv.addTempModProcs(procs, DeflectBullets1Ability, DeflectBullets1Ability, 0.20000000000000001, 0, 0, FX.FX_VIRUSCAST_SPLIT_DEFLECT_BULLETS_DEFLECTBULLETS1)
+
+
+
+def DeflectVirus1Effect_DirectObject(subject, msg):
+    Utility.outputAbilityDebug('DeflectVirus1: DirectObject')
+    procs = ('',
+     'PlayFX',
+     '',
+     '')
+    subject.AbilityInv.addTempModProcs(procs, DeflectVirus1Ability, DeflectVirus1Ability, 0.20000000000000001, 0, 0, FX.FX_VIRUSCAST_SPLIT_DEFLECT_VIRUS_DEFLECTVIRUS1)
+
+
+
+def GenericCorruption(directobject, chanceValue):
+    item = (0,
+     0)
+    destoryed_item_ID = 0
+    if Utility.IsAnNPC(directobject):
+        weapon = directobject.AI.getWeapon()
+        if weapon:
+            item = (directobject.AI.getWeapon(),
+             109)
+        return (FAILURE,
+         0)
+    else:
+        itemList = []
+        item = Utility.GetEquippedWeapon(directobject)
+        if item:
+            nSlot = 109
+            itemList.append((item,
+             nSlot))
+        item = Utility.GetEquippedHackerItem(directobject)
+        if item:
+            nSlot = 110
+            itemList.append((item,
+             nSlot))
+        if (not itemList):
+            Utility.outputAbilityDebug('GenericCorruption: Subject has no items to destroy.')
+            return (FAILURE,
+             0)
+        item = Utility.GetRandomListEntry(itemList)
+    if Utility.IsAnNPC(directobject):
+        destoryed_item_ID = item[0]
+    else:
+        destoryed_item_ID = item[0].type
+    roll = random.randrange(1, 100)
+    Utility.outputAbilityDebug((('GenericCorruption: Corruption chance roll = ' + `roll`) + '.'))
+    if (roll > chanceValue):
+        Utility.outputAbilityDebug((((("GenericCorruption: Corruption's " + `chanceValue`) + ' failed on item(') + `item[1]`) + ').'))
+        return (DEFLECTED,
+         destoryed_item_ID)
+    destoryed = EFFECTS.DestroyItem(directobject, item[0], item[1])
+    return (destoryed,
+     destoryed_item_ID)
+
+
+
+# local variables:
+# tab-width: 4

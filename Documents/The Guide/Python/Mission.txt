@@ -1,0 +1,51 @@
+# emacs-mode: -*- python-*-
+class Mission(object):
+    __module__ = __name__
+
+    def OnModalDialogueAccepted(phasenumber, teamleader, messageid):
+        pass
+
+
+    def OnMissionEvent(phasenumber, eventid, teamids):
+        pass
+
+
+    def OnObjectTargeted(phasenumber, teamleader, itemname):
+        pass
+
+
+    def OnPlayerEnterZone(phasenumber, teamleader, zoneid):
+        pass
+
+
+    def OnToggledViewActivated(phasenumber, teamleader, viewid):
+        pass
+
+
+    def OnStartOfStage(phasenumber, stagenumber, teamids):
+        pass
+
+
+    def OnStartOfMission(teamids):
+        pass
+
+
+    def OnInventoryItemsSwapped(phasenumber, sender, destSlot, destID, destData, srcSlot, srcID, srcData):
+        pass
+
+
+    def OnShortcutAdded(phasenumber, sender, shortcutType, classData, instanceData, invSlot):
+        pass
+
+
+    def OnMovementUpdated(phasenumber, sender, posX, posY, posZ, angleFacing):
+        pass
+
+
+    def OnGoalComplete(self, phasenumber, goalnumber, teamids):
+        pass
+
+
+
+# local variables:
+# tab-width: 4

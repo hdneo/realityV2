@@ -1,0 +1,502 @@
+AcceleratedFountainPen:		DD
+Ad Building:			6D
+Ad Hardline:			69
+Ad Large:			71
+Advanced Data Goggles:		102
+Advanced Data Tap:		119
+Aikido 1,2,3 Grant:		119
+Anniv Smith Frag:		52
+Anniv07Ticket:			E7
+Anniv Shirts:			15E
+Anniv Blue Frags:		A3
+Anniv Blue Frag Set:		A2
+Antibiotic 1:			FC
+Antibiotic 2,3,4,5:		102
+Antidote:			ED
+Anti Overrides:			E7
+Anti Override Proto:		E0
+Anti Stun Pill 1,2:		FF
+Arcade Machine 2_1:		6B
+ArchitectAgentRecording:	F6
+Archive System Suit M:		162
+Archive System Suit F:		16E
+Archive Merv Trench, Zion Pants:162
+Archive SysShade, ZionBeret:	10B
+Archive Effects:		C7
+ArchivistBase_Returner_Default: 166
+ArchivistBase_Sender_Default	419
+AssassinCrush:			ED
+AssassinDeathTouchAbility:	C7
+Ashencourte F Glasses:		173
+Access Keycards:		AB
+Ballistic Res/Acc/Dmg/Def Bon:  A1
+Basic Data Goggles:		FE
+Big Jimmy Shirt:		12F
+Blue Sky M Hat:			F0
+Blue Sky Shirt:			15F
+Bomb5Stage1MDefuse:		158B
+Brass Pentacle:			99
+Chavim Dual Pistols:		164
+Clouded Glasses:		184
+Code Analyzer:			F8
+Code Bits:			E6
+Code Compiler:			FA
+Code Pulse:			1516
+CollectorBlueSky:		FF
+Collector Gang Items:		99
+Combat Toughness 3 Grant:	119
+Computer Virus:			104
+Cookie:				EA
+Corrupt_Code:			6B
+CorruptCC:			DC
+CorrruptDCA:			DC
+CorruptPatchersDana:		1AA
+CorruptPatchersHat:		1AA
+CorruptPatchersHeat:		1AA
+CorruptPatchersPill:		FB
+CoveringFireGrant:		115
+CraftingPlaceholder:		90
+Crypto Tool:			104
+Cryptos Box:			2CF
+CryptosChar01-11:		33F
+CSR Dolls, Tissues:		ED
+Cubicle:			67
+Cyph Arch Base Returner:	16A
+Cypherites_ArchivistBase_Sender:418
+Cypherite Spotlight Blue:	B83
+Data Node:			6B
+Data CD:			F2
+Data Disk:			EA
+Data Node Extractor 1-6:	168
+Data Node Extractor 7:		16C
+Datamine Tap:			270
+Data Node:			7D
+Data Node Handheld:		102
+Data Node Locator Goggles:	102
+Data Node Tap:			111
+Dead Blowflies:			E6
+Deadboy Shoes:			140
+Decomp Tool:			100
+Demon Head Medallion:		9E
+Demon Head Souvineir:		9D
+Detached Spectator:		7C
+Detection Pulse:		8E
+Detection Tool:			FA
+Devoted Ascetic:		7C
+Disable Device Tool:		102
+Disarming Shot Grant:		115
+Disguise Tool Player:		101
+Disguise Tool Admin:		106
+Disrupt Connection Tool:	F6
+Documents:			EA
+Doors:				C32
+DT Large Sign:			6B
+Dual Pistols:			130
+Creston Dungeon Shirt:		19D
+Dungeon Hammervile Coat:	155
+Dungeon Gracy Hat:		144
+Dungeon Hampton Revolver:	15B
+Dungeon Stinger:		15B
+Dungeon Needler:		144
+Dungeon Dragonskins:		16A
+Dungeon Lucero Shoes:		149
+Dungeon Lucero Rifle:		144
+Dungeon Lucero SMG, Shotgun:	138
+Dungeon Ridgeway Coat:		12F
+Dungeon Ridgeway Coat2:		155
+Dungeon Ridgeway MCoat1:	123
+Dungeon Ridgeway MCoat2:	149
+Dungeon Shinjuku FShirt:	155
+Dungeon Shinjuku MCoat:		155
+Dungeon South Vauxton Coats:	140
+Dungeon Stamos Glasses:		15E
+Dungeon Stamos Glasses:		14D
+Dungeon Uriah Gloves:		133
+Dungeon Uriah MGloves:		159
+Dungeon Zia Shoes:		144
+Dye Frag D 01:			E6
+E1 Automatic Rifles:		13B
+E1 Automatic Rifles:		13A
+E1 Automatic Rifles:		129
+E3 Semi Auto Pistol 1:		13E
+e50semiautopistol1tw017:	151
+e50semiautopistol3001:		13E
+Extreme Falling Kick:		128
+Ethan Coat:			13F
+Event1_1AOEAbility:		B1
+Event1 Abilities:		CD
+Event2 Assassinator:		131
+Event 2 Cake:			D7
+Event 2 Cake Vendor:		139
+Event 2 Clues:			EA
+Event2_0FlymanKillItem2:	A5
+Event2_0FlymanKillItem1:	A1
+Event2_0FlyVaccine:		D7
+Event2 Morpheus Corpse:		291
+Event 2_5 Assassin Mask:	14A
+Event 2_5 Decaying Code:	E1
+Event 2_5 Flit Gun:		107
+Event 2_5 Kill Code:		97
+Event 2_5 Assassin Ring:	140
+Event 3 Clue:			EE
+Event Bonfire:			9A
+exaustpipe_steam:		6B
+ExperienceRewardTicket1,2:	D6
+explosion medium:		6B
+Extractor7RecipeTicket:		E2
+FanaticSelfImprover:		7C
+FanFaire07TShirtFVerdigris:	15E
+FanFaire08PantsF:		15E
+Fastback Shoes:			10E
+Father Jones Shirt:		123
+F Beta Hat:			101
+WEAPON_VENDORS_VendorWeapMed:	164
+Firearms 1,2,3 Grant:		119
+FlameVirusSelfAbility:		147
+Flit Gun:			E6
+fountain, fountain2:		6B
+Function Frags:			EB
+Gas Mask Hat:			151
+generic_ability_upgrade:	6B
+Generic_ArchivistBase_Returner: 166
+Generic Signpost:		195
+Generic Vendor:			9E
+Gray Bandana F:			17B
+Gray Bandana M:			16B
+GreenLaser1,2,3Barrier:		2F9
+Gregore Coat:			144
+Hack Computer Grant:		119
+Hack Construct Key Ability:	CB
+Halloween Masks (all):		A4
+Halloween Pumpkin:		3E7
+Hampton Coat:			166
+Hampton Pants:			15A
+Hardline Phone Booth:		24E
+Hardline_PhoneBooth_Newbie:	24E
+HardlineJunctionBox:		87B
+Hasad M Shirt:			17A
+Headless F Glasses:		15E
+Headless Frags:			9D
+Heal Inhaler 1:			FD
+Heal Inhaler 2-5:		104
+HealthRegenRateAbility:		9D
+Health Replenish Pill:		FC
+Health Replenish Pill2-5:	102
+HealthSitRegenRateAbility:	94
+Hel Boots:			190
+Holy Water:			F8
+Holy Water Plus:		FA
+Horace Shoes:			123
+Hovercraft Ranks:		E6
+Huang Shirt:			149
+Hyper Abilities:		E9
+Hyper Jump Grants:		119
+Hyper Speed Ability:		14A
+Immunity To Self Ability:	FF
+Impart Invisibility:		10E
+Industrial Coat:		155
+Industrial Gloves:		16A
+Industrial Hat:			155
+Industrial Pants:		116
+Infection Immunity Ability:	105
+Initiative Ability:		9D
+InquisitiveGenius:		7C
+Invisibility_Belt:		F4
+InvisibilityAbilityGrant:	119
+Iron Guard Grant:		115
+IS Booster:			E8
+ISDrainTargetAbility:		91
+Jack Gloves:			11E
+Jacob Pants:			140
+John Q Revolver:		168
+Jokah F Hat:			155
+Jokah M Hat:			149
+Johnnygun:			140
+Karate Grants:			119
+Kat Scratch Coat:		126
+Kenny Lee Shirt:		140
+Kenny Lee Coat:			140
+Kerton Gloves:			11E
+Kerton Gloves:			159
+ki buildup:			6B
+ki impact:			6B
+Kraven Shirt:			12A
+Kraven Shirt:			165
+Kung Fu Grants:			119
+Kunoichi Doll:			E9
+Kunoichi Gi:			166
+Kunoichi M Black Gran Gi:	15A
+Pink Gi M:			157
+Kunoichi Grandmaster Gloves:	1A9
+Kunoichi Shoes:			16F
+Kunoichi Shuriken:		ED
+Kuno Toybox Daimyo:		15C
+Kunoichi Tokens:		ED
+Kunoichi Toxbox Pink:		15C
+Kunoichi Daimyo World:		465
+Kunoichi Master World:		465
+Kunoichi World Pink:		465
+LED Device:			EA
+LED PDA:			9D
+LESIG Spawn Consumable:		E9
+Lieutenant Chang Glasses:	149
+Lil Quick Shoes:		144
+Lockpick:			101
+LogicBarrageAbility:		FB
+LogicBlast1:			104
+LogicBlast2:			F7
+Logic Bomb 2:			105
+Logic Cannons:			F7
+Loripor Coat:			13B
+Lucian's Launcher:		131
+Lucian's Launcher:		126
+Luggable Bomb Code:		246
+Luggable Code Optimizer:	8E
+LuggableRecipeAndFragProc: 	369
+Luggable LED Box:		236
+Luggable N30 Frag:		246
+Luggable Overdrive:		9D
+LuggableRecipeAndFragProc:	375
+Luggable_Overdrive_Decompile:	383
+Luggable_Personal_Holiday_1:	156
+Luggable_Personal_Holiday_2:	156
+ITEM_VENDORS_VendorSnowman:	EC
+Luggable_Quicksilver:		9D
+Luggable_Quicksilver_Compile:	383
+Luggable_SignalBooster:		279
+Luggable_Smith_Virus_1:		233
+LunaticFringe:			7C
+Machine_ArchivistBase_Returner: 16A
+Machine_ArchivistBase_Sender:	418
+MachineBAbility:		111
+Machine Gun Kick:		124
+Mainframe Computer:		6D8
+Maki Otoshi:			118
+Martial Arts Grants:		119
+Massive Concert Frame:		6E
+MassiveConcertHorizFrame:	6E
+Massive Concert Screen:		CA
+MassiveConcertVertAd:		89
+MassiveBillboard:		89
+MassiveBuildingSide:		89
+MassiveLightRack:		6E
+MaxHealthAbility:		9D
+MaxHealthBoostPill:		FC
+MaxHealthBoostPill1-5:		102
+MeleeCombatTacticsAbility:	9D
+Merovingian_ArchivistBaseSender:418
+MerovingianPersephoneAssassin:	F6
+Merovingian Story Trophies:	F2
+MesonRifle1B:			143
+MesonRifle2,2B,3,3B:		142
+Michel Shirt:			140
+Mikah Glasses:			149
+Misdirect Punch:		105
+MorpheusExplainsQuestRecording:	F6
+NewAgeHippy:			7C
+NPCBeliefAttributeAbility:	B6
+NPCChainFlameEffectAbility:	124
+NPCChainFlameTriggerAbility:	E0
+NPCCombatTacticsAbility:	B6
+NPCHealthSitRegenRateAbility:	B6
+NPCKilledOnlyByWoodAbility:	8B
+NPCKunoichiBuffs:		236
+NPCMorpheusSpeechAbility:	BB
+NPCNeoRSIAbility:		FE
+NPCShadowAOEFriendly:		C8
+NPCSleepwalkerBuffs:		1D6
+NPCStaggerAbility:		B3
+NPCTwinRazor2Ability:		E5
+NPCUnsusceptibilityAbility:	F1
+NPCValkValfreyjaBuffs:		164
+NPCValkyrjaBuffs:		140
+NPCVirusBlindDoNotUseAbility:	C3
+NPCWrightSignalJammingAbility:	D8
+Officer Peck's Shirt:		16A
+Officer Taylor Pistol:		134
+OGAcceleratorBit:		E7
+OGCompressAbility:		EC
+OGLOSTerminateFriendliesAbility:B7
+OGTerminateFriendliesAbility:	B7
+One Zero Robot Hands:		17F
+One Zero Taskmaster Finger:	DC
+Open Locks Grants:		119
+Optimizer Frag:			E9
+Optimizer Hypo:			101
+Optimizer Inhaler:		101
+Optix Glasses:			10E
+Oracle Anniversary Cookie:	85
+Overdrive Bandana F:		1AC
+Overhand Smash:			14C
+Overheat 2 Ability:		10F
+Override Bits:			DD
+Packet Loss 1,2 Ability:	122
+PacZone10:			227
+PacZone10i:			1F7
+Pandora1234Reward1,2:		128
+Pandora 1 Gloves:		16E
+Pandora1_3MGloves:		1A3
+Pandora1BloodSpatteredNotes:	AB
+Pandora 1 Box World		5B8
+Pandora 2 1,2 Coat:		173
+Pandora 2 3 Coat:		198
+Pandora2BoxWorld:		5B8
+Pandora 3 Shirt 1,2:		173
+Pandora 3 Shirt 3:		1A8
+Pandora 4 Shoes 1,2:		1B2
+Pandora 4 Shoes 3:		1E7
+Pandora4BoxWorld:		5B8
+PartyGrrl Shotgun 1,2:		14C
+Petal F Pants:			140
+Pidgey:				12F
+Pidgey Flock:			6E
+Pistol Grants:			119
+Player Character:		338
+PluribusNeo_ArchivistBase_Retur:16A
+PluribusNeo_ArchivistBase_Send: 418
+Program Launcher:		13E
+Propaganda Poster:		298
+ProxyCoderAbility:		FE
+PvP_Pass_Machines_1:		FB
+PVPPulse20:			227
+PVPPulse40:			227
+Quicksilver Gloves:		1B8
+Quicksilver Frag:		E9
+Quicksilver Pill:		101
+ReactorFGlasses:		10E
+Recordings:			F2
+Red Insecticide:		E6
+Red Pill:			F2
+RedLaser1Barrier:		2F9
+Revolver 1:			121
+Revolver 10:			121
+Rifles Grants:			119
+RoadSign:			A9
+RP Items:			EE
+RP Items:			DE
+RSI Captures:			B6
+RSI Pills (all):		138
+RSI Fragments:			F3
+Sakura Shoes:			12B
+Sakura Gloves:			159
+Sakura Dana:			149
+ScanlineReceiver:		136
+SearchlightAnimated:		6B
+SearchlightStationary:		6B
+Secluded Introvert:		7C
+Security Hat:			10B
+Security Shirt:			162
+SemiAutoPistol1:		121
+SereneCalm:			149
+SergeantWynnFCoat:		16A
+Server_Racks:			118
+ShadowPhoenixPill:		101
+ShadowRazorPill:		101
+ShadowWallKickPill:		101
+ShockKiddFGlasses:		15D
+Shotgun1:			12D
+Sidekick Combo:			10B
+Signal Booster:			115
+Silver Bullet:			100
+Silver Bullet Plus:		102
+Sixth Sense Grants:		119
+Sky High Sidekick:		125
+Sleepwalker F Glasses:		15A
+Sleepwalker Bandana:		1B2
+Sleepwalker M Hat:		1BA
+Sleepwalker Pants:		1AE
+Sleepwalker Shirt:		16F
+Sleepwalker Shoes:		16F
+Sleepwalker Marble 1,2,3:	ED
+Sleepwalker SMG:		153
+Sleepwalker Tokens:		DD
+Sleepwalker Toyboxes:		15C
+SMG Grants:			119
+Smith End Brownie:		6C
+Smith Firewall Candy:		6C
+Smith Rage Pill:		F7
+Sneak Grants:			119
+SneakAttackPuntAbility:		FF
+Sneak Attack Drop Kick:		F5
+Sneak Attack Spin Throw:	FD
+Sneak Attack Suplex:		14A
+Sniper Rifle 1:			12E
+SpinningFlowerAbility:		133
+SpotlightAuraAbility:		1B4
+SSR Earpiece:			112
+SSR Glasses:			1D8
+SSR Hat:			17B
+SSR Shoes:			15D
+SSR Gum:			E7
+StraightEdgeJohnMGloves:	13B
+Submachinegun1:			121
+SuicidalButterflyAbility:	10C
+SwirlingKiSummonAbility:	137
+System Tie Clip:		DC
+Tabor Note For Michel:		A7
+Tactic Boost 1:			FC
+TacticBoost2-4:			102
+Taggert's Pipeline:		140
+Tanto Shoes:			140
+TapInfoBankTool:		F6
+Taskmaster Beret:		10A
+TauntAbility:			F8
+TestNerfBazooka1,2:		167
+TestNerfBazooka3:		17C
+ThroatCuttingThrowAbility:	157
+TinCan Hat:			15A
+TomoNageAbility:		15F
+TransitionFGlasses:		AA
+TransitionMCoat:		AA
+TripleFrontKickAbility:		115
+TrojanHorseAbility:		154
+Troubled Intellectual:		7C
+True Believer:			7C
+Twin Legs, Torso, Head:		E6
+UnlimitCrush: 			EB
+UnlimitTransform:		DC
+ValkAndvaranautCoupler:		ED
+ValkAndvarFrag:			DD
+ValkBrisingamen:		DD
+Valk Glasses Rose, Valk:	199
+Valk F Shirt:			FB
+Valk Suit:			166
+Valk F Shoes:			EF
+ValkPistol1,2:			13C
+Variable Frags:			E7
+Variable Frags R:		E9
+ViktorAutomaticRifle8:		161
+Virus (RP):			F2
+White Insecticide:		E6
+Widows Moor Coat:		15E
+Widows Moor Glasses:		15E
+Widows Moor FHat:		155
+Widows Moor MHat:		149
+Winston Gloves:			159
+Winter Snowman (all):		8A
+WinterCoat_M B,W,R:		159
+WinterFormalGloves B,W:		169
+WinterFormalHat B,W:		102
+WinterFormalShoes B,W:		165
+WinterFormalSkirt B,W:		165
+Winter Holiday Hats:		AB
+Winter Masks:			A4
+Winter Party Hats:		AF
+Winter Snowflake Perf,Rub:	8E
+WinterShirt F R,B,W:		169
+Winter Snowballs:		AA
+Wireframe Earpiece:		1CF
+Wireframe Glasses:		1C3
+Wooden Stake:			101
+Wooden Stake Plus:		103
+WristThrowAbility:		124
+Yorkie Pants:			155
+Yuki Gloves:			159
+Yuki F Hat:			155
+Yuki M Hat:			148
+Yuki Shoes:			12B
+Zero One Head:			E8
+Zero One Head Box:		DC
+Zero One Parts:			E8
+Zero One Parts Box:		DC
+ZombieVirus3BiteAbility:	E4

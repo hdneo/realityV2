@@ -1,0 +1,5 @@
+[13.08.2009 19:14:14] CRITICAL: MySQLDatabase Connection failed due to: `Access denied for user 'reality'@'localhost' (using password: YES)`
+[13.08.2009 19:14:14] CRITICAL: sql: Main database initialization failed. Exiting.
+[13.08.2009 19:14:14] CRITICAL: Error starting database!
+[13.08.2009 19:18:12] ERROR: Invalid RSA ciphertext, client used bad pubkey.dat, disconnected.
+[23.08.2009 17:17:01] WARNING: User loluser supplied an invalid password, disconnecting.

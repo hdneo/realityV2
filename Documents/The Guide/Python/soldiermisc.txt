@@ -1,0 +1,37 @@
+# emacs-mode: -*- python-*-
+import random
+import traceback
+import obj
+import missionvalidate as mv
+import combatvalidate as cv
+import stringtable_client as StringTable
+import ability.utility as Utility
+import ltfxmap as FX
+from ability.defines import *
+SYNAPTIC_SWEEP_KICK_DAMAGE_MIN = 12
+SYNAPTIC_SWEEP_KICK_DAMAGE_MAX = 48
+SYNAPTIC_SWEEP_KICK_FX = FX.FX_CHARACTER_SYNAPTIC_SWEEP_KICK
+
+def SynapticSweepKick_DirectObject(subject, msg):
+    Utility.outputAbilityDebug('SynapticSweepKick_DirectObject:')
+    if (not subject.CharMvt.isEnemy(msg.subjectLocator)):
+        return None
+    damage = random.randrange(SYNAPTIC_SWEEP_KICK_DAMAGE_MIN, SYNAPTIC_SWEEP_KICK_DAMAGE_MAX)
+    Utility.outputAbilityDebug(('SynapticSweepKick_DirectObject: %d damage dealt' % damage))
+    damage = subject.Interlock.physicalDamageFromAbility(msg.subjectLocator, damage)
+    Utility.SendTakeDamageResultToAll(SUCCESS, SynapticSweepKickAbility, msg.subjectLocator, msg.directObjectLocator, damage)
+    discovery.playEffect(subject.locator, subject.locator, SYNAPTIC_SWEEP_KICK_FX, 0)
+
+
+
+def SynapticSweepKick_Subject(subject, msg):
+    Utility.outputAbilityDebug('SynapticSweepKick_Subject  : ')
+    loc = subject.CharMvt.Position
+    subject.AbilityInv.applyAbilityToArea(SynapticSweepKickAbility, SUCCESS, loc.x, loc.y, loc.z, 400)
+    if (not subject.isInCombat):
+        subject.CharMvt.playScript(Stance_Stand, Action_SweepKick, SynapticSweepKickAbility)
+
+
+
+# local variables:
+# tab-width: 4

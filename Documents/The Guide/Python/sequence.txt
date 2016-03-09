@@ -1,0 +1,987 @@
+# emacs-mode: -*- python-*-
+import stringtable_client as ST
+
+def Init():
+    print 'Sequence system Inited'
+
+
+
+def GetEngineObject(GO):
+    if (GO.CharacterMovement is not None):
+        return GO.CharacterMovement
+    if (GO.Model is not None):
+        return GO.Model
+    if (GO.Normal is not None):
+        return GO.Normal
+
+
+
+def GetObjectPosition(GO):
+    Engine = GetEngineObject(GO)
+    if (Engine is not None):
+        return Engine.Position
+    else:
+        return None
+
+
+
+def GetObjectOrientation(GO):
+    Engine = GetEngineObject(GO)
+    if (Engine is not None):
+        return Engine.Orientation
+    else:
+        return None
+
+
+
+def OnSequence1Completed(GangMasterAdapter = None):
+    print 'Complete'
+    if (GangMasterAdapter is None):
+        return None
+    print 'Got Gang'
+    Item = discovery.getGameObjectType('PandoraRewardContainer')
+    TargetLocator = GangMasterAdapter.TargetLocator
+    Target = discovery.getPlayerCharID(TargetLocator)
+    Code = ('SetPermanentExclusion(%d);AddRewardGroup("PANDORA_TABLES_Pandora1PSR")' % int(Target))
+    Position = GetObjectPosition(GangMasterAdapter)
+    Orientation = GetObjectOrientation(GangMasterAdapter)
+    discovery.SpawnObject(Item, consolevar.ConID, Position, Orientation, Code)
+    print 'Done0r'
+
+
+
+def OnSequence1Failed(GangMasterAdapter = None):
+    pass
+
+
+def GetNearestBox(GangMasterAdapter, GOID, dist):
+    position = GetObjectPosition(GangMasterAdapter)
+    if (position is None):
+        return None
+    components = (constants.ComponentFactory.ELTGOModel,
+     constants.ComponentFactory.ELTGOStateMachine)
+    objects = physics.getObjectsInRadius(position.x, position.y, position.z, dist, components, 400.0)
+    closestDist = (((dist * dist) * 400) + 1)
+    closestBox = None
+    for object in objects:
+        if (object.type == GOID):
+            objPos = GetObjectPosition(object)
+            if (objPos is not None):
+                curDist = ((((position.x - objPos.x) * (position.x - objPos.x)) + ((position.y - objPos.y) * (position.y - objPos.y))) + ((position.z - objPos.z) * (position.z - objPos.z)))
+                if (curDist < closestDist):
+                    closestDist = curDist
+                    closestBox = object
+
+    return closestBox
+
+
+
+def SpawnPandoraReward(GangMasterAdapter, RewardTable, Position):
+    if ((GangMasterAdapter is None) or (Position is None)):
+        return None
+    Item = discovery.getGameObjectType('PandoraRewardContainer')
+    TargetLocator = GangMasterAdapter.TargetLocator
+    Target = discovery.getPlayerCharID(TargetLocator)
+    Code = ('SetPermanentExclusion(%d);AddRewardGroup("%s")' % (int(Target),
+     RewardTable))
+    Orientation = GetObjectOrientation(GangMasterAdapter)
+    discovery.SpawnObject(Item, consolevar.ConID, Position, Orientation, Code)
+
+
+PANDORA_BOX_RANGE = 500
+
+def OnSequence47Wave1Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora2BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence47Wave2Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora2BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence47Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora2BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'PANDORA_TABLES_Pandora2PSR', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence47Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora2BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_PANDORA_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence48Wave0Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora3BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence48Wave1Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora3BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence48Wave1Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora3BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence48Wave2Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora3BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence48Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora3BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'PANDORA_TABLES_Pandora3PSR', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence48Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora3BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_PANDORA_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence49Wave0Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora1BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence49Wave1Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora1BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence49Wave1Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora1BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence49Wave2Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora1BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence49Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora1BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'PANDORA_TABLES_Pandora1PSR', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence49Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora1BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_PANDORA_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence50Wave0Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence50Wave1Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence50Wave1Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence50Wave2Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence50Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'PANDORA_TABLES_Pandora4PSR', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence50Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_PANDORA_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence51Wave0Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave0Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave1Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Wave1Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave1Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave2Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Wave2Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave2Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave3Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Wave3Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave3Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave4Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Wave4Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave4Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave5Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Wave5Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave5Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave6Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Wave6Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave6Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave7Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Wave7Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave7Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave8Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Wave8Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave8Expired(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxWaitNextWave')
+
+
+
+def OnSequence51Wave9Started(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    box.StateMachine.setState('BoxPortalSecondaryState')
+
+
+
+def OnSequence51Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('Pandora4BoxWorld'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'PANDORA_TABLES_Pandora4PSR', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence58Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    Item = discovery.getGameObjectType('PandoraRewardContainer')
+    TargetLocator = GangMasterAdapter.TargetLocator
+    Target = discovery.getPlayerCharID(TargetLocator)
+    Position = GetObjectPosition(GangMasterAdapter)
+    Position.y -= (2 * (discovery.getGameObjectPropValue(discovery.getGameObjectType('PlayerCharacter'), 'HalfExtents').y - discovery.getGameObjectPropValue(Item, 'HalfExtents').y))
+    Code = ('SetPermanentExclusion(%d);AddRewardGroup("%s")' % (int(Target),
+     'EVENT_TABLES_Halloween2'))
+    Orientation = GetObjectOrientation(GangMasterAdapter)
+    discovery.SpawnObject(Item, consolevar.ConID, Position, Orientation, Code)
+
+
+
+def SpawnDataNodeReward(GangMasterAdapter, Code):
+    if (GangMasterAdapter is None):
+        return None
+    Item = discovery.getGameObjectType('DataNodeContainer')
+    TargetLocator = GangMasterAdapter.TargetLocator
+    Target = discovery.getPlayerCharID(TargetLocator)
+    Position = GetObjectPosition(GangMasterAdapter)
+    Position.y -= (2 * (discovery.getGameObjectPropValue(discovery.getGameObjectType('PlayerCharacter'), 'HalfExtents').y - discovery.getGameObjectPropValue(Item, 'HalfExtents').y))
+    Orientation = GetObjectOrientation(GangMasterAdapter)
+    Code = Code.replace('!d', ('%d' % int(Target)))
+    PlayerObject = discovery.getObjectFromLocator(TargetLocator)
+    if (PlayerObject is None):
+        level = 0
+    else:
+        level = PlayerObject.Level
+    Code = Code.replace('!l', ('%d' % int(level)))
+    discovery.SpawnObject(Item, consolevar.ConID, Position, Orientation, Code)
+
+
+
+def OnSequence157Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_DataNodeInfoTable'))
+
+
+
+def OnSequence158Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_DataNodeExpTable')))
+
+
+
+def OnSequence159Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_DataNodeExpTable')))
+
+
+
+def OnSequence160Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_RedFrag'))
+
+
+
+def OnSequence161Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_RedFragAll1_4'))
+
+
+
+def OnSequence162Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_RedFragAll1_4'))
+
+
+
+def OnSequence163Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_RedFragAll1_4'))
+
+
+
+def OnSequence164Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_RedFragAll1_4'))
+
+
+
+def OnSequence165Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_RedFragRandomTLR',
+     'DATANODETABLES_RedFragRandomTLR')))
+
+
+
+def OnSequence166Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_PortableSignalBooster'))
+
+
+
+def OnSequence167Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_DataNodeExpTable',
+     'DATANODETABLES_RedFragAll1_4')))
+
+
+
+def OnSequence168Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_DataNodeExpTable',
+     'DATANODETABLES_RedFragAll1_4')))
+
+
+
+def OnSequence169Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_Extractor6RecipeFrag'))
+
+
+
+def OnSequence170Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_CommonSetFull')))
+
+
+
+def OnSequence171Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_DataNodeExpTable',
+     'DATANODETABLES_RedFragAll')))
+
+
+
+def OnSequence172Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_Quicksilver'))
+
+
+
+def OnSequence173Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_Extractor7RecipeFrag'))
+
+
+
+def OnSequence174Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_Extractor7ExtraFrag'))
+
+
+
+def OnSequence175Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_RedFragAllRandomTLR',
+     'DATANODETABLES_RandomLuggableTLR')))
+
+
+
+def OnSequence176Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l)' % 'DATANODETABLES_CodeOptimizer'))
+
+
+
+def OnSequence177Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    SpawnDataNodeReward(GangMasterAdapter, ('SetPermanentExclusion(!d);AddRewardGroup("%s", !l);AddRewardGroup("%s", !l)' % ('DATANODETABLES_DataNodeInfoTable',
+     'DATANODETABLES_Overdrive')))
+
+
+
+def OnSequence189Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldInit'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'QUESTLOOT_SatiKunoToyBoxInitRew', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence189Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldInit'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_TOY_BOX_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence190Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldMast'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'QUESTLOOT_SatiKunoToyBoxMastRew', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence190Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldMast'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_TOY_BOX_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence191Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldGran'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'QUESTLOOT_SatiKunoToyBoxGranRew', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence191Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldGran'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_TOY_BOX_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence192Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldDaimyo'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'QUESTLOOT_SatiKunoToyBoxDaimRew', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence192Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldDaimyo'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_TOY_BOX_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence193Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldPink'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'QUESTLOOT_SatiKunoToyBoxPinkRew', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence193Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('KunoToyBoxWorldPink'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_TOY_BOX_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence194Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('SleepToyBoxWorld1'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'QUESTLOOT_SatiSleepToyBox1Rew', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence194Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('SleepToyBoxWorld1'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_TOY_BOX_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence195Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('SleepToyBoxWorld2'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'QUESTLOOT_SatiSleepToyBox2Rew', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence195Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('SleepToyBoxWorld2'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_TOY_BOX_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+def OnSequence196Completed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('SleepToyBoxWorld3'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    SpawnPandoraReward(GangMasterAdapter, 'QUESTLOOT_SatiSleepToyBox3Rew', box.Position)
+    box.StateMachine.setState('BoxFinishedState')
+
+
+
+def OnSequence196Failed(GangMasterAdapter = None):
+    if (GangMasterAdapter is None):
+        return None
+    box = GetNearestBox(GangMasterAdapter, discovery.getGameObjectType('SleepToyBoxWorld3'), PANDORA_BOX_RANGE)
+    if (box is None):
+        return None
+    if (GangMasterAdapter.TargetLocator is not None):
+        discovery.clientSystemMessage(GangMasterAdapter.TargetLocator, ST.ID_TOY_BOX_SEQUENCE_FAIL, constants.Chat.CT_SYS_IMPORTANT)
+    box.StateMachine.setState('BoxCleanupState')
+
+
+
+# local variables:
+# tab-width: 4

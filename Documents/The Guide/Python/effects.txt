@@ -1,0 +1,83 @@
+# emacs-mode: -*- python-*-
+import combat_defines as CD
+import ability.utility as Utility
+import ltfxmap as FX
+from ability.defines import *
+import stringtable_client as StringTable
+
+def CorrodeItem(item, corrosionAmount):
+    if item:
+        stability = item.stability
+        Utility.outputAbilityDebug((('CorrodeItem: item has ' + `stability`) + ' stability.'))
+        if (stability == 0):
+            Utility.outputAbilityDebug('CorrodeItem: Item is industructable.')
+            return None
+        stability -= corrosionAmount
+        item.stability = stability
+        if ((stability <= 0) or (stability > 7)):
+            Utility.outputAbilityDebug('CorrodeItem: Item has no stability left.')
+        return True
+    else:
+        Utility.outputAbilityDebug('CorrodeItem: No item given to corrode.')
+        return False
+
+
+
+def DestroyItem(subject, item, slot):
+    if Utility.IsAPlayer(subject):
+        Utility.outputAbilityDebug((((('DestroyItem: slot' + `slot`) + "'s item.stability = ") + `item.stability`) + '.'))
+        if (item.stability == 0):
+            Utility.outputAbilityDebug('DestroyItem: Item is indestructable.')
+            return DEFLECTED
+        Utility.outputAbilityDebug("DestroyItem: Player's item destroyed.")
+        subject.Inventory.rmvItem(slot)
+    elif (slot == 109):
+        Utility.outputAbilityDebug("DestroyItem: NPC's weapon destroyed.")
+        subject.AI.rmvWeapon()
+    else:
+        Utility.outputAbilityDebug("DestroyItem: NPC's doesn't have that slot.")
+    return SUCCESS
+
+
+DISABLE_FX = FX.FX_CHARACTER_GENERIC_ABILITY_DOWNGRADE
+
+def DisableDependents(subject, src_abil, duration):
+    abil_list = abilitylib.getAbilityDependents(src_abil)
+    Utility.outputAbilityDebug('DisableDependents:')
+    if len(abil_list):
+        for abil in abil_list:
+            ab_name = Utility.getAbilityName(abil)
+            Utility.outputAbilityDebug(('%s ' % ab_name))
+            if subject.hasAbility[abil]:
+                Utility.outputAbilityDebug((' - disabling %s   ' % ab_name))
+                procs = ('GenericDisableInit',
+                 'GenericDisableTerm',
+                 '',
+                 '',
+                 '')
+                subject.AbilityInv.addTempModProcs(procs, abilitylib.Disabled, abil, duration, 0, 0)
+
+
+
+
+def DisableAbility(subject, targetAbility, src, duration, casterLocator, srcIsObject, sendMessage = True):
+    DisableDependents(subject, targetAbility, duration)
+    ab_name = Utility.getAbilityName(targetAbility)
+    Utility.outputAbilityDebug(('DisableAbility: - disabling %s   ' % ab_name))
+    procs = ('GenericDisableInit',
+     'GenericDisableTerm',
+     '',
+     '',
+     '')
+    subject.AbilityInv.addTempModProcs(procs, abilitylib.Disabled, targetAbility, duration, 0, 0)
+    type_id = 0
+    if srcIsObject:
+        type_id = targetAbility
+    else:
+        type_id = discovery.abilityIDToGameObjectID(targetAbility)
+    discovery.playEffect(subject.locator, subject.locator, DISABLE_FX, 0)
+
+
+
+# local variables:
+# tab-width: 4

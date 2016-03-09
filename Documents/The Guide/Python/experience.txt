@@ -1,0 +1,84 @@
+# emacs-mode: -*- python-*-
+experienceBaseMap = {}
+groupXPMap = {}
+
+def Init():
+    experienceBaseMap[constants.AI.WEAKLING] = consolevar.WeaklingKillMultiplier
+    experienceBaseMap[constants.AI.TOUGH] = consolevar.ToughKillMultiplier
+    experienceBaseMap[constants.AI.BOSS] = consolevar.BossKillMultiplier
+    groupXPMap[1] = 1.0
+    groupXPMap[2] = 1.2
+    groupXPMap[3] = 1.5
+    groupXPMap[4] = 1.6000000000000001
+    groupXPMap[5] = 1.75
+    groupXPMap[6] = 2.1000000000000001
+    print 'Experience system Inited'
+
+
+
+def ComputeExperience(pParent, playerLevel, playerDamage, totalDamage):
+    if (pParent.AI is None):
+        return None
+    if pParent.OwnerCharacterID:
+        return float(0)
+    NPCRank = constants.AI.WEAKLING
+    if ((pParent.AI.NPCRank is not None) and experienceBaseMap.has_key(pParent.AI.NPCRank)):
+        NPCRank = pParent.AI.NPCRank
+    percent = (playerDamage / totalDamage)
+    numerator = (1 + (pParent.CharacterBase.Level - playerLevel))
+    exponent = (numerator / 7)
+    rankConstant = experienceBaseMap[NPCRank]
+    experience = ((rankConstant * pow(3, exponent)) * percent)
+    if (playerLevel != 1):
+        playerLevel = (playerLevel - 1)
+    experience = (experience + (consolevar.XPKnob * (((playerLevel * experience) * consolevar.XPConstantMultiplier) - experience)))
+    return float(experience)
+
+
+
+def ComputeGroupBonus(currentExperience, numberPlayers):
+    experience = currentExperience
+    if groupXPMap.has_key(numberPlayers):
+        experience = (currentExperience * groupXPMap[numberPlayers])
+    return float(experience)
+
+
+
+def ComputeExperienceDecompile(playerLevel, itemComplexity):
+    numerator = (1 + (itemComplexity - playerLevel))
+    exponent = (numerator / 10)
+    constant = experienceBaseMap[constants.AI.WEAKLING]
+    experience = (constant * pow(3, exponent))
+    if (playerLevel != 1):
+        playerLevel = (playerLevel - 1)
+    experience = (experience + (consolevar.XPKnob * (((playerLevel * experience) * consolevar.XPConstantMultiplier) - experience)))
+    return float(experience)
+
+
+
+def ComputeExperienceWriteCode(playerLevel, itemComplexity):
+    numerator = (1 + (itemComplexity - playerLevel))
+    exponent = (numerator / 10)
+    constant = experienceBaseMap[constants.AI.WEAKLING]
+    experience = (constant * pow(3, exponent))
+    if (playerLevel != 1):
+        playerLevel = (playerLevel - 1)
+    experience = (experience + (consolevar.XPKnob * (((playerLevel * experience) * consolevar.XPConstantMultiplier) - experience)))
+    return float(experience)
+
+
+
+def ComputeGenericExperience(playerLevel, taskLevel, rank = constants.AI.WEAKLING):
+    numerator = (1 + (taskLevel - playerLevel))
+    exponent = (numerator / 10)
+    constant = experienceBaseMap[rank]
+    experience = (constant * pow(3, exponent))
+    if (playerLevel != 1):
+        playerLevel = (playerLevel - 1)
+    experience = (experience + (consolevar.XPKnob * (((playerLevel * experience) * consolevar.XPConstantMultiplier) - experience)))
+    return float(experience)
+
+
+
+# local variables:
+# tab-width: 4

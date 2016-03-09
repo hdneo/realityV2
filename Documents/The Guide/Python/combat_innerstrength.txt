@@ -1,0 +1,73 @@
+# emacs-mode: -*- python-*-
+import random
+import traceback
+import obj
+import combat_defines as CD
+import math
+import combat_utility as CU
+
+def calcInnerStrengthWithSelfDefense(tactical_setting):
+    if (tactical_setting == constants.combat.POWER):
+        return -20
+    elif (tactical_setting == constants.combat.SPEED):
+        return -10
+    elif (tactical_setting == constants.combat.DEFENSE):
+        return -10
+    elif (tactical_setting == constants.combat.BLOCK):
+        return 10
+    return 0
+
+
+
+def calcInnerStrengthWithMartialArt(tactical_setting):
+    if (tactical_setting == constants.combat.POWER):
+        return -20
+    elif (tactical_setting == constants.combat.SPEED):
+        return -10
+    elif (tactical_setting == constants.combat.DEFENSE):
+        return -5
+    elif (tactical_setting == constants.combat.BLOCK):
+        return 10
+    return 0
+
+
+
+def calcInnerStrengthWithGun(tactical_setting):
+    if (tactical_setting == constants.combat.POWER):
+        return -20
+    elif (tactical_setting == constants.combat.SPEED):
+        return -10
+    elif (tactical_setting == constants.combat.DEFENSE):
+        return -10
+    elif (tactical_setting == constants.combat.BLOCK):
+        return 10
+    return 0
+
+
+
+def calcInnerStrengthForWinner(tactic):
+    innerstrength_amount = 0
+    if CU.isUsingWeapon(tactic.itemID):
+        innerstrength_amount += calcInnerStrengthWithGun(tactic.tacticalSetting)
+    elif CU.isAbilityMartialArt(tactic.martialArt):
+        innerstrength_amount += calcInnerStrengthWithMartialArt(tactic.tacticalSetting)
+    else:
+        innerstrength_amount += calcInnerStrengthWithSelfDefense(tactic.tacticalSetting)
+    return innerstrength_amount
+
+
+
+def calcInnerStrengthForLoser(tactic):
+    innerstrength_amount = 0
+    if CU.isUsingWeapon(tactic.itemID):
+        innerstrength_amount += calcInnerStrengthWithGun(tactic.tacticalSetting)
+    elif CU.isAbilityMartialArt(tactic.martialArt):
+        innerstrength_amount += calcInnerStrengthWithMartialArt(tactic.tacticalSetting)
+    else:
+        innerstrength_amount += calcInnerStrengthWithSelfDefense(tactic.tacticalSetting)
+    return innerstrength_amount
+
+
+
+# local variables:
+# tab-width: 4

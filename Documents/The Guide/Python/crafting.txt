@@ -1,0 +1,32 @@
+# emacs-mode: -*- python-*-
+import ability.utility as Utility
+
+def WriteCodeActivate_Subject(subject, msg):
+    Utility.outputAbilityDebug(' Write Code subject ')
+    subject.CharMvt.playScript(Stance_StandType, Action_Idle, 1)
+
+
+
+def WriteCodeActivate_Deactivate(subject):
+    Utility.outputAbilityDebug((' Write Code deactivate %d %d' % (subject.Stance,
+     Stance_StandType)))
+    if (subject.Stance == Stance_StandType):
+        subject.CharMvt.playScript(Stance_Stand, Action_Idle)
+
+
+
+def CompileActivate_Subject(subject, msg):
+    Utility.outputAbilityDebug(' Compile subject ')
+    subject.CharMvt.playScript(Stance_StandType, Action_Idle, 1)
+
+
+
+def CompileActivate_Deactivate(subject):
+    Utility.outputAbilityDebug(' Compile deactivate ')
+    if (subject.Stance == Stance_StandType):
+        subject.CharMvt.playScript(Stance_Stand, Action_Idle)
+
+
+
+# local variables:
+# tab-width: 4

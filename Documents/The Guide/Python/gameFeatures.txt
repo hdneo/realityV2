@@ -1,0 +1,60 @@
+# emacs-mode: -*- python-*-
+import traceback
+import obj
+import math
+HYPER_JUMP_BETA_FEATURE = 201
+MOBIUS_CODE_CONVERSION_FEATURE = 200
+FREE_TRAIL_ACCOUNT_BIT = (1 << 1)
+
+def IsFreeTrail(subscriptionData):
+    if (subscriptionData & FREE_TRAIL_ACCOUNT_BIT):
+        return 1
+    return 0
+
+
+
+def EmailAbility(character, abilityID):
+    character.Inventory.addAbilityCode(abilityID)
+
+
+
+def EmailItem(character, itemID):
+    character.Inventory.addItem(itemID, 0)
+
+
+
+def HandleAction(character, gameFeature):
+    if (gameFeature.featureID == HYPER_JUMP_BETA_FEATURE):
+        return EmailAbility(character, PreOrderHyperLeapAbility)
+    elif (gameFeature.featureID == MOBIUS_CODE_CONVERSION_FEATURE):
+        return EmailAbility(character, MobiusCodeAbility)
+
+
+
+def HandleConditional(character, gameFeature, subscriptionData):
+    isFreeTrailPlayer = IsFreeTrail(subscriptionData)
+    if (gameFeature.featureID == HYPER_JUMP_BETA_FEATURE):
+        if (gameFeature.isActive and (gameFeature.consumeCount > 0)):
+            return True
+    elif (gameFeature.featureID == MOBIUS_CODE_CONVERSION_FEATURE):
+        if ((not isFreeTrailPlayer) and (gameFeature.isActive and (gameFeature.consumeCount > 0))):
+            return True
+    return False
+
+
+
+def HandleOnGameFeatures(character, gameFeatureArray, subscriptionData):
+    usedGameFeatures_list = []
+    isFreeTrailPlayer = IsFreeTrail(subscriptionData)
+    for curGameFeature in gameFeatureArray:
+        bCanBeUsed = HandleConditional(character, curGameFeature, subscriptionData)
+        if (bCanBeUsed == True):
+            HandleAction(character, curGameFeature)
+            usedGameFeatures_list.append(curGameFeature)
+
+    return tuple(usedGameFeatures_list)
+
+
+
+# local variables:
+# tab-width: 4

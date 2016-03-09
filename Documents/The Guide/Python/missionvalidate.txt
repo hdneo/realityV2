@@ -1,0 +1,71 @@
+# emacs-mode: -*- python-*-
+import random
+import traceback
+EMPTY_MISSION_KEY = 0L
+NON_ASSIGNABLE_MISSIONKEY = 4294967295L
+
+def MissionKeyBase(key):
+    return ((key & -256) >> 8)
+
+
+
+def MissionKeyPart(key):
+    return (key & 255)
+
+
+
+def ValidMissionKeyMatch(m1, m2):
+    if (not m1):
+        return True
+    if (not m2):
+        return False
+    if (MissionKeyPart(m1) != 0):
+        return (m1 == m2)
+    return (MissionKeyBase(m1) == MissionKeyBase(m2))
+
+
+
+def ValidMissionKeyBaseMatch(m1, m2):
+    if (not m1):
+        return True
+    if (not m2):
+        return False
+    return (MissionKeyBase(m1) == MissionKeyBase(m2))
+
+
+
+def IsMissionTeamMember(missionKey1, missionKey2):
+    if ((not missionKey1) or (not missionKey2)):
+        return False
+    if (missionKey1 == missionKey2):
+        return True
+    return False
+
+
+
+def IsPvPOpponent(missionKey1, missionKey2):
+    if ((not missionKey1) or (not missionKey2)):
+        return False
+    if ((MissionKeyBase(missionKey1) == MissionKeyBase(missionKey2)) and (MissionKeyPart(missionKey1) != MissionKeyPart(missionKey2))):
+        return True
+    return False
+
+
+
+def IsNonReservedMatchingKey(missionKey1, missionKey2):
+    if (not missionKey1):
+        return False
+    if (not missionKey2):
+        return False
+    if (not ValidMissionKeyBaseMatch(missionKey1, missionKey2)):
+        return False
+    if (MissionKeyPart(missionKey1) == 255):
+        return False
+    if (MissionKeyPart(missionKey2) == 255):
+        return False
+    return True
+
+
+
+# local variables:
+# tab-width: 4

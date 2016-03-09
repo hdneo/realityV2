@@ -1,0 +1,75 @@
+[PyScripter]
+Version=1.9.9.6
+
+[Project]
+ClassName=TProjectRootNode
+StoreRelativePaths=FALSE
+ShowFileExtensions=FALSE
+
+[Project\ChildNodes\Node0]
+ClassName=TProjectFilesNode
+
+[Project\ChildNodes\Node0\ChildNodes\Node0]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\clientObject.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node1]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\combat.log
+
+[Project\ChildNodes\Node0\ChildNodes\Node2]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\emoteList.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node3]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\eve.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node4]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\hyperjump.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node5]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\hyperjump.log
+
+[Project\ChildNodes\Node0\ChildNodes\Node6]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\packetTester.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node7]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\processLog.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node8]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\RSI.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node9]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\sheeva.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node10]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\udpserver.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node11]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\utilities.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node12]
+ClassName=TProjectFileNode
+FileName=C:\Documents and Settings\pahefu\Escritorio\sheevaEve\world.log
+
+[Project\ChildNodes\Node0\ChildNodes]
+Count=13
+
+[Project\ChildNodes\Node1]
+ClassName=TProjectRunConfiguationsNode
+
+[Project\ChildNodes]
+Count=2
+
+[Project\ExtraPythonPath]
+Count=0
+

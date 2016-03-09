@@ -1,0 +1,128 @@
+# emacs-mode: -*- python-*-
+import traceback
+import movement as Movement
+
+def AttackNearestPlayer():
+    nearest_player = physics.findNearestPlayer(consoletarget.Position, consoletarget.locator)
+    if nearest_player:
+        consoletarget.AI.attack(nearest_player)
+
+
+
+def AttackNearestAI():
+    nearest_ai = physics.findNearestAI(consoletarget.Position, consoletarget.locator)
+    if nearest_ai:
+        consoletarget.AI.attack(nearest_ai)
+
+
+
+def AttackMe():
+    consoletarget.AI.attack(consoleplayer.locator)
+
+
+
+def FollowMe():
+    consoletarget.AI.followTarget(consoleplayer.locator)
+
+
+
+def SetMood(mood):
+    consoletarget.CharMvt.setDemeanor(mood)
+
+
+
+def NPCType(config = None):
+    consoletarget.AI.NPCType(config)
+
+
+
+def Behaviour(config = None):
+    consoletarget.AI.behavior(config)
+
+
+
+def AddUnkeyedItem(item):
+    consoletarget.Container.addStableItem(item)
+
+
+
+def AddRewardItem(encodedReward):
+    rewardselection = RewardSelection()
+    rewards = rewardselection.Decode_Reward(encodedReward)
+    rewardselection.Apply_Rewards(rewards, consoletarget.Container)
+    if (consoletarget.MissionElement is not None):
+        consoletarget.MissionElement.setMissionKey(AddKeyOffset(missionkey, 255))
+
+
+
+def AddRewardGroup(rewardtable, teamlevel = None):
+    if (teamlevel is not None):
+        consoletarget.TeamLevel = teamlevel
+    rewardselection = RewardSelection()
+    rewardselection.DeterminePopulateReward('TeamLevelRewardRule', rewardtable, consoletarget.Container)
+    if (consoletarget.MissionElement is not None):
+        consoletarget.MissionElement.setMissionKey(AddKeyOffset(missionkey, 255))
+
+
+
+def SetName(npcname):
+    consoletarget.AI.NamedCharacterChat = 1
+    consoletarget.CharacterBase.setName(npcname)
+
+
+
+def NoLoot():
+    consoletarget.Rewards.RewardTable = None
+    consoletarget.Rewards.RewardRule = None
+
+
+
+def Immortal():
+    consoletarget.AI.immortal()
+
+
+
+def Healthy():
+    consoletarget.AI.healthy()
+
+
+
+def Wounded():
+    consoletarget.AI.wounded()
+
+
+
+def NearDead():
+    consoletarget.AI.neardead()
+
+
+
+def Dead():
+    consoletarget.AI.dead()
+
+
+
+def SetPermanentExclusion(playerid):
+    consoletarget.Container.setPermanentExclusion(playerid)
+
+
+
+def ExecuteAbilityOnNearestAI(abilityid):
+    nearest_ai = physics.findNearestAI(consoletarget.Position, consoletarget.locator)
+    if nearest_ai:
+        consoletarget.AI.executeAbility(abilityid, nearest_ai)
+
+
+
+def ExecuteAbilityOnSelf(abilityid):
+    consoletarget.AI.executeAbility(abilityid, consoletarget.locator)
+
+
+
+def ExecuteAbilityOnMe(abilityid):
+    consoletarget.AI.executeAbility(abilityid, consoleplayer.locator)
+
+
+
+# local variables:
+# tab-width: 4

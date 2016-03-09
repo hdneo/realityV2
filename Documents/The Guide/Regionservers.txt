@@ -1,0 +1,41 @@
+Regionservers have been responsible for a lot of important things over the years.
+There was a buff stacking exploit based on regionserver lines, and duping
+occurs on spontaneous regionserver crashes (no longer with scheduled shutdowns).
+
+To "find someone" quickly in MXO, such as a live event, you just need to find
+what regionserver they're on. Use this list to minimize the hardlines you need to
+visit. Once you have the regionserver narrowed down, a looping /who, /target, and 
+waypoint macro will do the trick.
+
+
+Bathory W
+Gracy Heights NW
+
+Apollyon SE
+Magog S
+Midian Park E
+Tabor W
+Uriah SW
+Uriah edge corner near wharf
+
+Furihata C
+Ikebukuro SW
+Murasaki NW
+Sai Kung C
+
+Baldwin Heights N
+Center Park S
+Creston NE top corner
+Chelsea SC
+Union Hill C
+
+Yuki
+Ashencourte
+10
+Sakura
+Widows Moor
+01
+Datamine
+Sati's Playground
+
+White Rooms

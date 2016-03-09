@@ -1,0 +1,33 @@
+# emacs-mode: -*- python-*-
+import traceback
+import obj
+HatAugments = []
+GlassesAugments = []
+ShirtAugments = []
+GlovesAugments = []
+CoatAugments = []
+PantsAugments = []
+ShoesAugments = []
+WeaponAugments = []
+HackerToolAugments = []
+MasterAugmentTable = [[],
+ HatAugments,
+ GlassesAugments,
+ ShirtAugments,
+ GlovesAugments,
+ CoatAugments,
+ PantsAugments,
+ [],
+ ShoesAugments,
+ WeaponAugments,
+ HackerToolAugments]
+
+def GetAugmentTable(category):
+    if (category >= len(MasterAugmentTable)):
+        return []
+    return MasterAugmentTable[category]
+
+
+
+# local variables:
+# tab-width: 4

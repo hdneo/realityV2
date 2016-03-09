@@ -1,0 +1,89 @@
+# emacs-mode: -*- python-*-
+import random
+import traceback
+import obj
+import missionvalidate as mv
+import combatvalidate as cv
+import stringtable_client as StringTable
+import ability.utility as Utility
+from ability.defines import *
+import ltfxmap as FX
+RequestTime = 60
+
+def RestoreRSI_DirectObject(subject, msg):
+    duration = 120
+    subject.PlayerCharacter.resuscitate()
+    subject.AbilityInv.takeInnerStrength((subject.AbilityInv.InnerStrengthMax - 1))
+    subject.AbilityInv.Health = 1
+    discovery.playEffect(subject.locator, subject.locator, FX.FX_CHARACTER_RESTORE_RSI, 0)
+    subject.CharMvt.playScript(Stance_Stand, Action_Resurrect, RestoreRSIAbility)
+    Utility.SendAbilityOutputToTargetMsg(StringTable.ID_CLIENT_ABILITY_REZ_DIRECTOBJECT, RestoreRSIAbility, msg)
+    Utility.SendAbilityOutputToCasterMsg(StringTable.ID_CLIENT_ABILITY_REZ_SUBJECT, RestoreRSIAbility, msg)
+    if subject.AbilityInv.isPvP():
+        discovery.sendApplyAbilityToSelf(msg.subjectLocator, 1208)
+
+
+
+def RestoreRSI_Test(sentence):
+    sentence.result = SUCCESS
+
+
+RestoreRSI_Test.depAttr = '\n'
+
+def RevitalizeRSI_DirectObject(subject, msg):
+    subject.PlayerCharacter.resuscitate()
+    discovery.playEffect(subject.locator, subject.locator, FX.FX_CHARACTER_RESTORE_RSI, 0)
+    subject.CharMvt.playScript(Stance_Stand, Action_Resurrect, RevitalizeRSIAbility)
+    subject.AbilityInv.Health = subject.AbilityInv.MaxHealth
+    subject.AbilityInv.takeInnerStrength(-subject.AbilityInv.InnerStrengthMax)
+    Utility.SendAbilityOutputToTargetMsg(StringTable.ID_CLIENT_ABILITY_REZ_DIRECTOBJECT, RevitalizeRSIAbility, msg)
+    Utility.SendAbilityOutputToCasterMsg(StringTable.ID_CLIENT_ABILITY_REZ_SUBJECT, RevitalizeRSIAbility, msg)
+    if subject.AbilityInv.isPvP():
+        discovery.sendApplyAbilityToSelf(msg.subjectLocator, 1208)
+
+
+
+def RejuvenateRSI_DirectObject(subject, msg):
+    subject.PlayerCharacter.resuscitate()
+    subject.AbilityInv.Health = subject.AbilityInv.MaxHealth
+    subject.AbilityInv.takeInnerStrength(-subject.AbilityInv.InnerStrengthMax)
+    discovery.playEffect(subject.locator, subject.locator, FX.FX_CHARACTER_RESTORE_RSI, 0)
+    subject.CharMvt.playScript(Stance_Stand, Action_Resurrect, RejuvenateRSIAbility)
+    Utility.SendAbilityOutputToTargetMsg(StringTable.ID_CLIENT_ABILITY_REZ_DIRECTOBJECT, RejuvenateRSIAbility, msg)
+    Utility.SendAbilityOutputToCasterMsg(StringTable.ID_CLIENT_ABILITY_REZ_SUBJECT, RejuvenateRSIAbility, msg)
+    if subject.AbilityInv.isPvP():
+        discovery.sendApplyAbilityToSelf(msg.subjectLocator, 1208)
+
+
+
+def ReviveRSI_DirectObject(subject, msg):
+    subject.PlayerCharacter.resuscitate()
+    subject.AbilityInv.Health = subject.AbilityInv.MaxHealth
+    subject.AbilityInv.takeInnerStrength(-subject.AbilityInv.InnerStrengthMax)
+    discovery.playEffect(subject.locator, subject.locator, FX.FX_CHARACTER_RESTORE_RSI, 0)
+    subject.CharMvt.playScript(Stance_Stand, Action_Resurrect, ReviveRSIAbility)
+    Utility.SendAbilityOutputToTargetMsg(StringTable.ID_CLIENT_ABILITY_REZ_DIRECTOBJECT, ReviveRSIAbility, msg)
+    Utility.SendAbilityOutputToCasterMsg(StringTable.ID_CLIENT_ABILITY_REZ_SUBJECT, ReviveRSIAbility, msg)
+    if subject.AbilityInv.isPvP():
+        discovery.sendApplyAbilityToSelf(msg.subjectLocator, 1208)
+
+
+
+def RenewRSI_DirectObject(subject, msg):
+    subject.PlayerCharacter.resuscitate()
+    subject.AbilityInv.Health = subject.AbilityInv.MaxHealth
+    subject.AbilityInv.takeInnerStrength(-subject.AbilityInv.InnerStrengthMax)
+    discovery.playEffect(subject.locator, subject.locator, FX.FX_CHARACTER_RESTORE_RSI, 0)
+    subject.CharMvt.playScript(Stance_Stand, Action_Resurrect, ReviveRSIAbility)
+    Utility.SendAbilityOutputToTargetMsg(StringTable.ID_CLIENT_ABILITY_REZ_DIRECTOBJECT, RenewRSIAbility, msg)
+    Utility.SendAbilityOutputToCasterMsg(StringTable.ID_CLIENT_ABILITY_REZ_SUBJECT, RenewRSIAbility, msg)
+    if subject.AbilityInv.isPvP():
+        discovery.sendApplyAbilityToSelf(msg.subjectLocator, 1208)
+
+
+from time import ctime
+print 'Reloading Health ',
+print ctime()
+
+# local variables:
+# tab-width: 4
