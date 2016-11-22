@@ -60,8 +60,10 @@ GameClient::GameClient(struct sockaddr_in address, SOCKET *sock, uint32 id) {
 
 	uint32 random = sRand.randInt(999999);
 	stringstream lol;
-	lol << "lolcharacter";
+	lol << "Morpheuzzz";
 	MyData.name = lol.str();
+	MyData.lastName = "Fishborne";
+	MyData.firstName = "Laurenz";
 
 	cout << "Initialized name" << endl;
 }
@@ -166,6 +168,16 @@ void GameClient::HandlePacket(char *pData, uint16 nLength) {
 				byte *nameInPacket = &GAMEResponseTo6_1Modified[0x55];
 				memset(nameInPacket, 0, 32);
 				memcpy(nameInPacket, MyData.name.c_str(), MyData.name.length()
+						+ 1);
+
+				byte *lastNameInPacket = &GAMEResponseTo6_1Modified[0x0C];
+				memset(lastNameInPacket, 0, 32);
+				memcpy(lastNameInPacket, MyData.lastName.c_str(), MyData.lastName.length()
+						+ 1);
+
+				byte *firstNameInPacket = &GAMEResponseTo6_1Modified[0x2D];
+				memset(firstNameInPacket, 0, 32);
+				memcpy(firstNameInPacket, MyData.firstName.c_str(), MyData.firstName.length()
 						+ 1);
 
 				/*double playerX,playerY,playerZ;

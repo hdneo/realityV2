@@ -153,7 +153,6 @@ void MarginSocket::ProcessData( const byte *buf,size_t len )
 
 			byte signature[128];
 			packetData.read(signature,sizeof(signature));
-			DEBUG_LOG("Signatur is : |%s|",Bin2Hex(signatur).c_str());
 
 			typedef struct  
 			{

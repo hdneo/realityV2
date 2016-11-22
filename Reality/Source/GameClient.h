@@ -66,6 +66,9 @@ class GameClient
 
 		//Client data stored on struct
 		struct Data {
+			string firstName;
+			string lastName;
+			string charId;
 		   string name;
 		   uint16 minSpawnValue;
 		   uint8 health;
